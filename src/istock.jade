@@ -1,0 +1,62 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p= text
+
+doctype html
+html(lang='en')
+	head
+		title GLOBAL Images
+
+		include ./partials/head.jade
+
+	body
+
+		include ./partials/top-line.jade
+		include ./partials/main-nav.jade
+		
+		section.part-description
+			.main-container
+				.inline-holder
+					.inline-el
+						.image-holder
+							img.fake-img(src="img/content/collectionsitem3.jpg", alt="")
+							.img(style= 'background-image: url(img/content/collectionsitem3.jpg)')
+					.inline-el
+						a(href="#")
+							.description-holder
+								p
+									|Getty Images Music has over 250,000 tracks from around the world |available for advertising, television, film, video games and digtal |media. From our high end GUESTLIST and Premium Playlist to stan- |dard music collections (Pump Audio, Ah2, Atom Factory, Sound- cloud |and our RF SoundExpress), you will find a wide spectrum of genres |and styles, all pre-cleared for synch and master use rights, for |use on any media, for any term, for every budget.
+								button View collection
+		section.about
+			.main-container
+				.inline-holder
+					+aboutitem(
+						'istock',
+						'Founded back in 1995 by two visionary entre- preneurs, Guliver evolved as the leading supplier of editorial and commercial imagery in the Balkans. Since 1996 Guliver has been a supporting member of CEPIC (Coordination of European Picture Agencies Stock, Press and Heritage – the centre of the picture industry)'
+					)
+					+aboutitem(
+						'istock',
+						'Founded back in 1995 by two visionary entre- preneurs, Guliver evolved as the leading supplier of editorial and commercial imagery in the Balkans. Since 1996 Guliver has been a supporting member of CEPIC (Coordination of European Picture Agencies Stock, Press and Heritage – the centre of the picture industry)'
+					)
+					+aboutitem(
+						'istock',
+						'Founded back in 1995 by two visionary entre- preneurs, Guliver evolved as the leading supplier of editorial and commercial imagery in the Balkans. Since 1996 Guliver has been a supporting member of CEPIC (Coordination of European Picture Agencies Stock, Press and Heritage – the centre of the picture industry)'
+					)
+
+		include ./partials/order.jade
+
+
+
+
+
+		include ./partials/footer.jade
+
+
+
+
+
+	include ./partials/scripts.jade

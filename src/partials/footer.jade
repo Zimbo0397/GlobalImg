@@ -1,0 +1,21 @@
+section.footer
+	.main-container
+		.inline-holder.first-lv
+			.inline-el.nav-list
+				ul
+					mixin footmenuitem(href, text)
+						li.inline-el
+							a(href= href)= text
+					+footmenuitem('#', 'Правовая информация')
+					+footmenuitem('#', 'Истории и тренды')
+					+footmenuitem('#', 'Контакты')
+			.inline-el.social-list
+				ul
+					mixin footsocitem(href, src, cls)
+						li.inline-el(class= cls)
+							a(href= href)
+								img(src= src, alt= src)
+
+					+footsocitem('#', 'img/icons/facebook-foot-icon.png', 'facebook')
+					+footsocitem('#', 'img/icons/twitter-foot-icon.png', 'twitter')
+					+footsocitem('#', 'img/icons/instagram-foot-icon.png', 'instagram')

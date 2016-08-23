@@ -1,0 +1,88 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p= text
+
+doctype html
+html(lang='en')
+	head
+		title GLOBAL Images
+
+		include ./partials/head.jade
+
+	body
+
+		include ./partials/top-line.jade
+		include ./partials/main-nav.jade
+
+
+		section.contacts-header
+			.main-container
+				h1 Let’s talk! I’m interested in
+
+		section.contacts-holder
+			.main-container
+				.inline-holder
+					.inline-el.send-form
+						form(action="")
+							.input-holder
+								select#(name="question")
+									option(value="") Getting a quote
+									option(value="") Getting a quote
+									option(value="") Getting a quote
+									option(value="") Getting a quote
+							.input-holder
+								label(for="") Name (required)
+								input(type="text")
+							.input-holder
+								label(for="") Email (required)
+								input(type="text")
+							.input-holder.phone
+								label(for="") Phone number 
+								input(type="text")
+							.input-holder
+								label(for="") Message
+								input(type="text")
+							.input-holder
+								.button-holder
+									button Send
+
+					.inline-el.contacts-blocks
+						h3 CONTACT
+						.contacts-block
+							h4 KIEV OFFICE
+							p 
+								|If you are in Kiev, Kharkiv or |Odessa, please adress your |inquiry to:
+							h3 	GlobalImage Trade
+							p 18 Crisana Street 
+							p 10828 Bucharest
+							p t: +38 044 255 255
+							a(href="#") office@guliver.ro
+
+						.contacts-block
+							h4 KIEV OFFICE
+							p 
+								|If you are in Kiev, Kharkiv or |Odessa, please adress your |inquiry to:
+							h3 	GlobalImage Trade
+							p 18 Crisana Street 
+							p 10828 Bucharest
+							p t: +38 044 255 255
+							a(href="#") office@guliver.ro
+
+
+		include ./partials/order.jade
+
+
+
+
+
+		include ./partials/footer.jade
+
+
+
+
+
+	include ./partials/scripts.jade

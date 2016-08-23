@@ -1,0 +1,97 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p= text
+
+doctype html
+html(lang='en')
+	head
+		title GLOBAL Images
+
+		include ./partials/head.jade
+
+	body
+
+		include ./partials/top-line.jade
+		include ./partials/main-nav.jade
+		
+		section.photo-collections
+			.main-container
+				.inline-holder
+					mixin collectionsitem(desc, src, head  )
+						.inline-el
+							a(href="#")
+								h2= head
+								.image-holder
+									img.fake-img(src= src, alt= src)
+									.img(style= 'background-image: url('+ src +')')
+									.description-holder
+										p= desc
+										button View collection
+									
+					+collectionsitem(
+						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
+						'img/content/collectionsitem1.jpg',
+						'Креативные фото '
+					)
+					+collectionsitem(
+						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
+						'img/content/collectionsitem2.jpg',
+						'Редакционные фото'
+					)
+					+collectionsitem(
+						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
+						'img/content/collectionsitem3.jpg',
+						'Архивные фото'
+					)
+					+collectionsitem(
+						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
+						'img/content/collectionsitem4.jpg',
+						'Постановочные фото'
+					)
+		section.photo-collections.services
+			.main-container
+				h2 Наши услуги и сервисы
+				.inline-holder
+					mixin collectionsitem(head, src  )
+						.inline-el
+							a(href="#")
+								.image-holder
+									img.fake-img(src= src, alt= src)
+									.img(style='background-image: url('+ src +')')
+									.description-holder
+										h2= head
+					+collectionsitem(
+						
+						'Архивный календарь',
+						'img/content/collectionsitem1.jpg'
+					)
+					+collectionsitem(
+						'Архивный календарь',
+						'img/content/collectionsitem5.jpg'
+					)
+					+collectionsitem(
+						'Гид по поиску контента',
+						'img/content/collectionsitem6.jpg'
+					)
+					+collectionsitem(
+						'Истории и тренды',
+						'img/content/collectionsitem7.jpg'
+					)
+
+		include ./partials/order.jade
+
+
+
+
+
+		include ./partials/footer.jade
+
+
+
+
+
+	include ./partials/scripts.jade

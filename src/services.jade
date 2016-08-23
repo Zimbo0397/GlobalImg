@@ -1,0 +1,95 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p= text
+
+doctype html
+html(lang='en')
+	head
+		title GLOBAL Images
+
+		include ./partials/head.jade
+
+	body
+
+		include ./partials/top-line.jade
+		include ./partials/main-nav.jade
+
+
+		section.services-header
+			.main-container
+				h2|On top of licensing our suppliers’ valuable content, we are happy to provide you |with the following supplementary services, turning our collaboration effective |and complete.
+		
+		section.services-items#services-items
+			.main-container
+				.inline-holder
+					mixin servicesItem(src, head, description, href, hreftext)
+						.inline-el
+							.image-holder
+								img(src= src, class='fake-image')
+								.img(style='background-image: url('+src+')')
+								.description-holder
+									h1= head
+									p= description
+									a(href= href)= hreftext
+							.item-head
+								h1= head
+					+servicesItem(
+						'img/content/collectionsitem1.jpg',
+						'SEARCH',
+						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
+						'#',
+						'GET A SEARCH'
+					)
+					+servicesItem(
+						'img/content/collectionsitem2.jpg',
+						'INFO',
+						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
+						'#',
+						'GET A SEARCH'
+					)
+					+servicesItem(
+						'img/content/collectionsitem3.jpg',
+						'SEARCH',
+						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
+						'#',
+						'GET A SEARCH'
+					)
+					+servicesItem(
+						'img/content/collectionsitem4.jpg',
+						'INFO',
+						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
+						'#',
+						'GET A SEARCH'
+					)
+					+servicesItem(
+						'img/content/collectionsitem5.jpg',
+						'SEARCH',
+						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
+						'#',
+						'GET A SEARCH'
+					)
+					+servicesItem(
+						'img/content/collectionsitem6.jpg',
+						'INFO',
+						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
+						'#',
+						'GET A SEARCH'
+					)
+
+		include ./partials/order.jade
+
+
+
+
+
+		include ./partials/footer.jade
+
+
+
+
+
+	include ./partials/scripts.jade
