@@ -16,22 +16,46 @@ html(lang='en')
 	body
 
 		include ./partials/top-line.jade
-		include ./partials/main-nav.jade
-		
-		section.part-description
+
+		section.main-bg.music-bg
+			.main-container
+				.text
+					p 200 ТЫС АУДИО ТРЕКОВ
+		section.photo-collections
 			.main-container
 				.inline-holder
-					.inline-el
-						.image-holder
-							img.fake-img(src="img/content/part-description-1.jpg", alt="")
-							.img(style= 'background-image: url(img/content/part-description-1.jpg)')
-					.inline-el
-						a(href="#")
-							.description-holder
-								p
-									|Getty Images Music has over 250,000 tracks from around the world |available for advertising, television, film, video games and digtal |media. From our high end GUESTLIST and Premium Playlist to stan- |dard music collections (Pump Audio, Ah2, Atom Factory, Sound- cloud |and our RF SoundExpress), you will find a wide spectrum of genres |and styles, all pre-cleared for synch and master use rights, for |use on any media, for any term, for every budget.
-								button View collection
-		section.photo-collections.services
+					mixin collectionsitem(desc, src, head  )
+						.inline-el
+							a(href="#")
+								h2= head
+								.image-holder
+									img.fake-img(src= src, alt= src)
+									.img(style= 'background-image: url('+ src +')')
+									.description-holder
+										p= desc
+										button View collection
+									
+					+collectionsitem(
+						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
+						'img/content/collectionsitem1.jpg',
+						'Креативные фото '
+					)
+					+collectionsitem(
+						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
+						'img/images/gthyd.jpg',
+						'Редакционные фото'
+					)
+					+collectionsitem(
+						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
+						'img/content/part-description-1.jpg',
+						'Архивные фото'
+					)
+					+collectionsitem(
+						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
+						'img/content/collectionsitem11.jpg',
+						'Постановочные фото'
+					)
+		//- section.photo-collections.services
 			.main-container
 				h2 Наши услуги и сервисы
 				.inline-holder
@@ -40,13 +64,13 @@ html(lang='en')
 							a(href="#")
 								.image-holder
 									img.fake-img(src= src, alt= src)
-									.img(style="background-image: url("+ src +")")
+									.img(style='background-image: url('+ src +')')
 									.description-holder
 										h2= head
 					+collectionsitem(
 						
 						'Архивный календарь',
-						'img/content/collectionsitem5.jpg'
+						'img/content/collectionsitem1.jpg'
 					)
 					+collectionsitem(
 						'Архивный календарь',
@@ -59,23 +83,6 @@ html(lang='en')
 					+collectionsitem(
 						'Истории и тренды',
 						'img/content/collectionsitem7.jpg'
-					)
-					+collectionsitem(
-						
-						'Архивный календарь',
-						'img/content/collectionsitem8.jpg'
-					)
-					+collectionsitem(
-						'Архивный календарь',
-						'img/content/collectionsitem9.jpg'
-					)
-					+collectionsitem(
-						'Гид по поиску контента',
-						'img/content/collectionsitem10.jpg'
-					)
-					+collectionsitem(
-						'Истории и тренды',
-						'img/content/collectionsitem11.jpg'
 					)
 
 		include ./partials/order.jade

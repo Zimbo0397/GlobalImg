@@ -16,49 +16,45 @@ html(lang='en')
 	body
 
 		include ./partials/top-line.jade
-		include ./partials/main-nav.jade
-
 		section.main-slider
-			.main-container
-				ul.bxslider
-					mixin sliderItem(src, text)
-						li
-							.image-holder
-								img.fake-img(src= src, alt= src)
-								.img(style= 'background-image: url('+ src +')')
-							if text
-								.captions
-									span= text
-					+sliderItem('img/content/sliderimg1.jpg', 'Лучший креативный контент от признанных фотографов мирового уровня. Исследования трендов в сфере визуальных коммуникаций')
-					+sliderItem('img/content/sliderimg2.jpg', 'Глобальное покрытие текущих спортивных событий и игр снятых ведущими мировыми спортивными фотографами')
-					+sliderItem('img/content/sliderimg3.jpg')
-					+sliderItem('img/content/sliderimg4.jpg', 'Не имеющее равных глобальное покрытие развлекательных событий – награждения, музыкальные фестивали, кинопремьеры, красные дорожки, показы, крутые вечерники')
-					+sliderItem('img/content/sliderimg5.jpg', 'Новостная съемка локальных и международных событий – где бы и когда бы они не происходили наши фотографы будут там')
-					+sliderItem('img/content/sliderimg6.jpg', 'Премиальный креативный видео контент от National Geographic Creative,  DiscoveryFootageSource и др.')
-					+sliderItem('img/content/sliderimg7.jpg', 'Реальные события и люди. Репортажный и архивный видео контент от Bloomberg, Sky News, Grinberg, Paramount, Pathe Newsreels и др.')
-					+sliderItem('img/content/sliderimg8.jpg', 'Крупнейший в мире цифровой архив наиболее знаковых исторических материалов')
-					+sliderItem('img/content/sliderimg9.jpg')
-					+sliderItem('img/content/sliderimg10.jpg')
-					+sliderItem('img/content/sliderimg11.jpg')
-					+sliderItem('img/content/sliderimg12.jpg', 'Гибкие ценовые предложения под любой, даже самый маленький бюджет')
-					+sliderItem('img/content/sliderimg13.jpg', 'Индивидуальные решения для вашего проекта')
-					+sliderItem('img/content/sliderimg14.jpg', 'Высококачественные аудио клипы с гибкими и простыми для понимания правами на использование')
-					
+			ul.bxslider
+				mixin sliderItem(src, text)
+					li
+						.image-holder
+							img(src= src, alt= src)
+						if text
+							.captions
+								span= text
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg')
+				+sliderItem('img/images/index-slide-1.jpg')
+				+sliderItem('img/images/index-slide-1.jpg')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий ')
+				+sliderItem('img/images/index-slide-1.jpg', 'Глобальное покрытие текущих спортивных событий')
+				
 
 		section.about
 			.main-container
 				.inline-holder
 					+aboutitem(
 						'О нас',
-						'Founded back in 1995 by two visionary entre- preneurs, Guliver evolved as the leading supplier of editorial and commercial imagery in the Balkans. Since 1996 Guliver has been a supporting member of CEPIC (Coordination of European Picture Agencies Stock, Press and Heritage – the centre of the picture industry)'
+						'Global Images - эксклюзивный представитель Getty Images в Украине - мирового лидера на рынке визуальных коммуникаций с общим объемом цифрового контента более 2,3 мил- лиарда. Мы были первыми на украинском рынке кто начал заниматься лицензированием контента и вот уже более 15 лет продолжаем.'
 					)
 					+aboutitem(
 						'Getty Images',
-						'Founded back in 1995 by two visionary entre- preneurs, Guliver evolved as the leading supplier of editorial and commercial imagery in the Balkans. Since 1996 Guliver has been a supporting member of CEPIC (Coordination of European Picture Agencies Stock, Press and Heritage – the centre of the picture industry)'
+						'Global Images - эксклюзивный представитель Getty Images в Украине - мирового лидера на рынке визуальных коммуникаций с общим объемом цифрового контента более 2,3 мил- лиарда. Мы были первыми на украинском рынке кто начал заниматься лицензированием контента и вот уже более 15 лет продолжаем.'
 					)
 					+aboutitem(
 						'Работая с нами',
-						'Founded back in 1995 by two visionary entre- preneurs, Guliver evolved as the leading supplier of editorial and commercial imagery in the Balkans. Since 1996 Guliver has been a supporting member of CEPIC (Coordination of European Picture Agencies Stock, Press and Heritage – the centre of the picture industry)'
+						'Global Images - эксклюзивный представитель Getty Images в Украине - мирового лидера на рынке визуальных коммуникаций с общим объемом цифрового контента более 2,3 мил- лиарда. Мы были первыми на украинском рынке кто начал заниматься лицензированием контента и вот уже более 15 лет продолжаем.'
 					)
 
 		section.mini-galery
@@ -94,83 +90,83 @@ html(lang='en')
 				.inline-holder
 					+aboutitem(
 						'Контент',
-						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Аналитическая база - миллионы поисковых запросов, анализ успешных рекламных кампаний, интервью с мировыми экспертами в области креатива.У нас вы найдете уникальные снимки, получившие награды, которые доступны только на Getty Images.Мы ежедневно добавляем новые фотографии –  от ультрасовременных концептуальных снимков до новостных, развлекательных, спортивных и архивных изображений.'
+						'Global Images - эксклюзивный представитель Getty Images в Украине - мирового лидера на рынке визуальных коммуникаций с общим объемом цифрового контента более 2,3 мил- лиарда. Мы были первыми на украинском рынке кто начал заниматься лицензированием контента и вот уже более 15 лет продолжаем.'
 					)
 					+aboutitem(
 						'Экспертиза',
-						'Опыт и знания, полученные нами на протяжении 15 лет работы в индустрии лицензирования контента дают уникальную возможность нашим клиентам лицензировать материалы и получать юридические услуги в одном месте – что позволяет клиенту сэкономить время и определить потенциально узкие места с точки зрения прав в самом начале работы над проектом и исключить ситуации, связанные с некорректным использованием имиджа.Наши наработанные профессиональные связи и опыт работы в данной индустрии позволяют нашим клиентам высвободить время для переговорного процесса. Отношения c фондами и институтами позволяют ускорить переговоры по получению разрешений на использование имиджа и высвободить время для творческой работы. Нет бюджета на проведение очистки прав? Мы единственные на рынке предлагаем услугу по страхованию рисков, связанных с использованием имиджей без предварительной очистки в коммерческих целях.'
+						'Global Images - эксклюзивный представитель Getty Images в Украине - мирового лидера на рынке визуальных коммуникаций с общим объемом цифрового контента более 2,3 мил- лиарда. Мы были первыми на украинском рынке кто начал заниматься лицензированием контента и вот уже более 15 лет продолжаем.'
 					)
 					+aboutitem(
 						'Преимущества',
-						'Getty Images – единая платформа где представлены все виды цифрового контента – фото, видео, музыка.Gety Images предлагает одну из самых продвинутых систем по поиску контента и технологию распознавания изображений.Возможность покупки премиального контента и эксклюзивных прав с сайта <a href="www.gettyimages.com">www.gettyimages.com</a> для крупномасштабных рекламных кампаний, а также недорогих микростоковых подписок, доступных через сайт <a href="www.istock.com">www.istock.com</a>  для малобюджетных проектов или проектов где требуется большой объем цифрового контента – здесь вы сможете найти идеальный вариант для вашего проекта и вашего бюджета.Работа с более чем со 250 000 контрибьюторами со всего мира – тематичесское, географическое разнообразие контента.Передача прав на все материалы согласно требований Украинского законодательства и оплата в национальной валюте.'
+						'Global Images - эксклюзивный представитель Getty Images в Украине - мирового лидера на рынке визуальных коммуникаций с общим объемом цифрового контента более 2,3 мил- лиарда. Мы были первыми на украинском рынке кто начал заниматься лицензированием контента и вот уже более 15 лет продолжаем.'
 					)
 
-		section.facts
-			.main-container
-				h2 Некоторые факты о нас
-				.inline-holder.white-box
-					mixin factsitem(count, src, desc)
-						.inline-el
-							.top-name.ellipsis-text
-								span= count
-							.image-holder
-								img(src= src, alt= src)
-							.factsdesc
-								span!= desc
-					+factsitem(
-						'100 стран',
-						'img/icons/factsico1.png',
-						'мира – наши </br> счастливые клиенты'
-						)
-					+factsitem(
-						'125 млн',
-						'img/icons/factsico2.png',
-						'тематических фото'
-						)
-					+factsitem(
-						'2 млн',
-						'img/icons/factsico3.png',
-						'видео'
-						)
-					+factsitem(
-						'200 тыс',
-						'img/icons/factsico4.png',
-						'треков'
-						)
+		//- section.facts
+		//- 	.main-container
+		//- 		h2 Некоторые факты о нас
+		//- 		.inline-holder.white-box
+		//- 			mixin factsitem(count, src, desc)
+		//- 				.inline-el
+		//- 					.top-name.ellipsis-text
+		//- 						span= count
+		//- 					.image-holder
+		//- 						img(src= src, alt= src)
+		//- 					.factsdesc
+		//- 						span!= desc
+		//- 			+factsitem(
+		//- 				'100 стран',
+		//- 				'img/icons/factsico1.png',
+		//- 				'мира – наши </br> счастливые клиенты'
+		//- 				)
+		//- 			+factsitem(
+		//- 				'125 млн',
+		//- 				'img/icons/factsico2.png',
+		//- 				'тематических фото'
+		//- 				)
+		//- 			+factsitem(
+		//- 				'2 млн',
+		//- 				'img/icons/factsico3.png',
+		//- 				'видео'
+		//- 				)
+		//- 			+factsitem(
+		//- 				'200 тыс',
+		//- 				'img/icons/factsico4.png',
+		//- 				'треков'
+		//- 				)
 
 		section.articles-list
 			.main-container
 				.inline-holder.first-lv
-					mixin articlesitem(header, desc, src)
+					mixin articlesitem(header, src)
 						.inline-el.first-lv
-							.inline-holder
-								.inline-el
-									.description-holder
-										h3!= header
-										p= desc
-								.inline-el
-									.image-holder
-										img.fake-img(src= src, alt= src)
-										.img(style= 'background-image: url('+ src +')')
+							.image-holder
+								img.fake-img(src= src, alt= src)
+								.img(style= 'background-image: url('+ src +')')
+								h3!= header
+									
 					+articlesitem(
-						'Creative <br> In Focus 2015',
-						'Хотите узнать как будет выглядеть мир будущего? Смотрите впечатляющий прогноз визуальных трен- дов 2015 на Getty Images',
-						'img/content/artimg1.jpg'
+						'Story and trend',
+						'img/images/story.jpg'
 					)
 					+articlesitem(
-						'Year <br> in Focus 2014',
-						'Хотите узнать как будет выглядеть мир будущего? Смотрите впечатляющий прогноз визуальных трен- дов 2015 на Getty Images',
-						'img/content/artimg2.jpg'
+						'Creative in focus ',
+						'img/images/creative-in.jpg'
 					)
 					+articlesitem(
-						'Join!',
-						'Хотите узнать как будет выглядеть мир будущего? Смотрите впечатляющий прогноз визуальных трен- дов 2015 на Getty Images',
-						'img/content/artimg3.jpg'
+						'Year in focus ',
+						'img/images/in-focus.jpg'
 					)
 					+articlesitem(
-						'Urban Spirit',
-						'Хотите узнать как будет выглядеть мир будущего? Смотрите впечатляющий прогноз визуальных трен- дов 2015 на Getty Images',
-						'img/content/artimg4.jpg'
+						'Peer',
+						'img/images/peer.jpg'
+					)
+					+articlesitem(
+						'Where we stand ',
+						'img/images/where.jpg'
+					)
+					+articlesitem(
+						'Copyright matters',
+						'img/images/copyright.jpg'
 					)
 		include ./partials/footer.jade
 
