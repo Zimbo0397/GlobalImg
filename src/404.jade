@@ -1,0 +1,41 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p= text
+
+doctype html
+html(lang='en')
+	head
+		title GLOBAL Images
+
+		include ./partials/head.jade
+
+	body
+
+		include ./partials/top-line.jade
+
+
+		section.page-404
+			.main-container
+				h5 We're sorry...
+				p An error has occurred 
+
+				p
+					|An error has occurred on the page you were requesting. If this problem persists, please contact the site administrator.
+				p
+					|2912447
+
+
+
+
+
+		include ./partials/footer.jade
+
+
+
+
+
+	include ./partials/scripts.jade

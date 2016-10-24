@@ -18,66 +18,98 @@ html(lang='en')
 		include ./partials/top-line.jade
 
 
-		section.contacts-header
+		section.main-bg.contacts-bg
 			.main-container
-				h1 Let’s talk! I’m interested in
+				.text
+					p НАШИ КОНТАКТЫ
 
-		section.contacts-holder
+		section.contacts-description
 			.main-container
 				.inline-holder
-					.inline-el.send-form
-						form(action="")
-							.input-holder
-								select#(name="question")
-									option(value="") Getting a quote
-									option(value="") Getting a quote
-									option(value="") Getting a quote
-									option(value="") Getting a quote
-							.input-holder
-								label(for="") Name (required)
-								input(type="text")
-							.input-holder
-								label(for="") Email (required)
-								input(type="text")
-							.input-holder.phone
-								label(for="") Phone number 
-								input(type="text")
-							.input-holder
-								label(for="") Message
-								input(type="text")
-							.input-holder
-								.button-holder
-									button Send
+					.inline-el
+						h3 GLOBAL IMAGES UKRAINE
+						p
+							|Эксклюзивный представитель 
+							a(href="www.gettyimages.com") Getty images 
+							| в Украине, мирового лидера по созданию, распространению и лицензированию всех видов цифрового контента
+					.inline-el
+						h3 +38 (044) 277 99 66
+						p
+							|ООО "ГЛОБАЛ ИМИДЖЕС ЮКРЕЙН"/ Getty images Master Delegate Украина 01032г.Киев,ул.Саксаганского,119,8эт. email:
+							a(href="") ukraine@globalimages.com.ua
+		section.map-section
+			.main-container
+				.map-holder
+					#map
 
-					.inline-el.contacts-blocks
-						h3 CONTACT
-						.contacts-block
-							h4 KIEV OFFICE
-							p 
-								|If you are in Kiev, Kharkiv or |Odessa, please adress your |inquiry to:
-							h3 	GlobalImage Trade
-							p 18 Crisana Street 
-							p 10828 Bucharest
-							p t: +38 044 255 255
-							a(href="#") office@guliver.ro
+		section.team-section
+			.main-container
+				h2 Встречайте Команду
+				.inline-holder
+					mixin minigalitem(text, href, src)
+						.contact-block.inline-el
+							.text-holder
+								p= text
+								a(href= href)= href 
+							.image-holder
+								img.fake-img(src= src, alt= src)
+								.img(style= 'background-image: url('+ src +')')
+								.description-holder
+									.text
+										p Address: The White House. 1600 Pennsylvania Avenue, NW.
+										p
+											a(href="tel:5545545455454") Tel: +5545545455454
+										p
+											a(href="mailto:president@whitehouse.gov") Email: president@whitehouse.gov
+					+minigalitem(
+					'Кирилл Матвиенко/партнер',
+					'matvienko@globalimages.com.ua',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко/партнер',
+					'matvienko@globalimages.com.ua',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко/партнер',
+					'matvienko@globalimages.com.ua',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко/партнер',
+					'matvienko@globalimages.com.ua',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко/партнер',
+					'matvienko@globalimages.com.ua',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко/партнер',
+					'matvienko@globalimages.com.ua',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко/партнер',
+					'matvienko@globalimages.com.ua',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко/партнер',
+					'matvienko@globalimages.com.ua',
+					'img/content/sliderimg8.jpg'
+					)
+					
+						
+						
 
-						.contacts-block
-							h4 KIEV OFFICE
-							p 
-								|If you are in Kiev, Kharkiv or |Odessa, please adress your |inquiry to:
-							h3 	GlobalImage Trade
-							p 18 Crisana Street 
-							p 10828 Bucharest
-							p t: +38 044 255 255
-							a(href="#") office@guliver.ro
-
-
-		include ./partials/order.jade
 
 
 
 
-
+		
 		include ./partials/footer.jade
 
 

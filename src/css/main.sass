@@ -19,16 +19,29 @@ $main-color: #ffd500
 	opacity: 0 !important
 // body
 // 	background: #E4E1E1
-body::-webkit-scrollbar
-	height: 0
-	width: 0
+// body::-webkit-scrollbar
+// 	height: 0
+// 	width: 0
+body
 	font-family: CenturyGothic
+	&.blackshadow
+		overflow: hidden
+		&:before
+			content: ''
+			position: fixed
+			left: 0
+			right: 0
+			top: 0
+			bottom: 0
+			background: #000
+			opacity: 0.4
+			z-index: 5
 
 .ellipsis-text
 	overflow: hidden
 	white-space: nowrap
 	text-overflow: ellipsis
-a 
+a
 	text-decoration: none
 	font-family: inherit
 .inline-holder
@@ -59,6 +72,8 @@ a
 		background-image: url(../img/images/music-bg-1.jpg)
 	&.video-bg
 		background-image: url(../img/images/video-bg.jpg)
+	&.contacts-bg
+		background-image: url(../img/images/foto-bg.jpg)
 	.text
 		p
 			position: absolute
@@ -68,10 +83,11 @@ a
 			color: white
 			font-size: 24px	
 			font-weight: 400
-			line-height: 22px
+			line-height: 27px
 			background: #2b2323
 			opacity: 0.9
-			padding: 11px
+			padding: 11px 20px
+			text-transform: uppercase
 // image-holder
 .image-holder
 	overflow: hidden
@@ -106,13 +122,17 @@ a
 		padding-left: 15px	
 		padding-right: 15px
 
+.logos
+	@media (max-width: $tablet)
+		height: 50px
 
 // /top-line/
-section.top-line
+.top-line
 	padding-top: 40px
 	padding-bottom: 32px
 	.right-part.inline-el,
 	.left-part.inline-el
+		z-index: 2
 		.image-holder
 			display: inline-block
 	.left-part.inline-el
@@ -121,25 +141,21 @@ section.top-line
 		position: absolute
 		left: 45px
 		top: 47px
-		@media (max-width: $mobile-large)
-			width: 125px
-		@media (max-width: $medium)
-			padding-left: 40px
+		@media (max-width: $tablet)
+			left: 15px
 		@media (max-width: $mobile-small)
-				padding-left: 10px
+			width: 128px
 	.right-part.inline-el
 		text-align: right
 		width: 128px
 		position: absolute
 		top: 47px
 		right: 55px
-		@media (max-width: $mobile-large)
-			width: 120px
-		@media (max-width: $medium)
-			padding-right: 40px
+		@media (max-width: $tablet)
+			right: 15px
 		@media (max-width: $mobile-small)
-				padding-right: 10px
-
+			width: 108px
+		
 // /main-nav/
 .main-nav
 	.nav-container
@@ -148,41 +164,51 @@ section.top-line
 		padding-left: 150px
 		padding-right: 131px
 		position: relative
-		top: -5px
+		@media (max-width: $tablet)
+			padding: 0 15px
 		ul.inline-holder
 			text-align: center
 			padding-left: 0
 			li.inline-el
 				transition: background 0.5s
 				position: relative
-				&:after
-					content: ''
-					display: block
-					position: absolute
-					width: 0
-					bottom: -5px
-					left: 0
-					height: 5px
-					background: #000
-				&:hover
-					&:after
-						transition: width 0.2s
-						width: 100%
-				&:active
-					&:after
-						transition: width 0.2s
-						width: 100%
 				a
-					padding-left: 12px
-					padding-right: 12px
+					margin-left: 12px
+					margin-right: 12px
 					line-height: 2.6em
 					font-size: 19px
 					color: #231f20
+					position: relative
+					transition: color 0.2s
+					@media (max-width: $medium)
+						margin-left: 5px
+						margin-right: 5px
+					&:after
+						content: ''
+						display: block
+						position: absolute
+						width: 0
+						top: -54px
+						left: 0
+						height: 5px
+						background: #000
+					&:hover
+						color: #929497
+						transition: color 0.2s
+						&:after
+							transition: width 0.2s
+							width: 100%
+					&.active
+						color: #929497
+						transition: color 0.2s
+						&:after
+							transition: width 0.2s
+							width: 100%
 					@media (max-width: $medium)
 						font-size: 17px
 						padding-left: 8px
 						padding-right: 8px
-					@media (max-width: $mobile-large)
+					@media (max-width: $tablet)
 						display: none
 		ul#mobile-menu
 			list-style: none
@@ -190,7 +216,8 @@ section.top-line
 			max-height: 0
 			overflow: hidden
 			transition: max-height .5s
-			@media (min-width: $mobile-large)
+			padding-left: 0
+			@media (min-width: $tablet)
 				display: none
 			&.open
 				max-height: 999px
@@ -201,7 +228,7 @@ section.top-line
 				a
 					line-height: 2.0em
 					font-size: 15px
-					color: #fff
+					color: #000
 					position: relative
 					&:after
 						content: ''
@@ -216,26 +243,26 @@ section.top-line
 						&:after
 							transition: width 0.2s
 							width: 100%
-					&:active
+					&.active
 						&:after
 							transition: width 0.2s
 							width: 100%
 		div.mobile-btn-holder
-			height: 52px
+			height: 44px
 			text-align: right
 			padding: 10px
 			padding-right: 4px
-			@media (min-width: $mobile-large)
+			@media (min-width: $tablet)
 				display: none
 			div#m-nav-btn
 				display: inline-block
-				height: 40px
+				height: 25px
 				width: 40px
 				cursor: pointer
 				span
 					display: block
 					height: 5px
-					background: #fff
+					background: #000
 					margin-top: 4px
 					margin-bottom: 4px
 					&:first-child
@@ -244,6 +271,39 @@ section.top-line
 
 // /main-slider
 section.main-slider
+	position: relative
+	.slider-holder
+		@media (max-width: $mobile-large)
+			display: none
+	.mobile-slider-holder
+		.image-holder
+			width: 100%
+		@media (min-width: $mobile-large)
+			display: none
+	.sec-description
+		position: absolute
+		top: 50%
+		left: 50%
+		-webkit-transform: translateX(-50%) translateY(-50%)
+		-ms-transform: translateX(-50%) translateY(-50%)
+		transform: translateX(-50%) translateY(-50%)
+		color: white
+		font-size: 24px
+		font-weight: 400
+		line-height: 22px
+		background: #2b2323
+		opacity: 0.9
+		padding: 11px 15px
+		p
+			margin: 0
+			text-transform: uppercase
+	.image-holder
+		width: 25%
+		min-height: 150px
+		height: 340px
+		text-align: left
+		&:nth-child(3n+2)
+			width: 50% 
 	.bx-wrapper
 		border: none
 		box-shadow: none
@@ -287,24 +347,30 @@ section.main-slider
 				margin-left: -15px
 				transform: rotate(45deg) translateX(-50%) translateY(-50%)
 		.captions
-			position: absolute
+			position: relative
 			color: white
+			text-align: center
 			font-family: CenturyGothic
 			font-size: 18px
 			font-weight: 400
 			line-height: 22px
 			overflow: hidden
 			right: auto
-			left: 50%
-			transform: translateX(-63%)
-			bottom: 10px
-			padding: 9px 12px
+			transform: translateY(-123%)
+			left: 10px
+			padding: 9px 20px
 			background: #000
-			max-width: 636px
-			max-height: 79px
+			max-width: 90%
+			max-height: 60%
 			opacity: 0.8
+			display: inline-block
+			@media (max-width: $mobile-small)
+				top: -10px
 			@media (max-width: $mobile-large)
-				display: none
+				transform: translateY(-143%)
+
+			p
+				margin: 0
 		.bx-pager.bx-default-pager
 			display: none
 	// .image-holder
@@ -318,6 +384,8 @@ section.about
 	font-family: CenturyGothic
 	line-height: 22px
 	padding-top: 47px
+	@media (max-width: $mobile-large)
+		padding-top: 20px
 	h2
 		color: #231f20
 		font-family: CenturyGothic
@@ -326,6 +394,7 @@ section.about
 		text-align: center
 		margin-top: 43px
 		margin-bottom: 49px
+		line-height: 32px
 	.inline-holder
 		margin-left: $gap / -2
 		margin-right: $gap / -2
@@ -340,7 +409,7 @@ section.about
 				font-weight: 700
 				text-align: center
 				margin-bottom: 32px
-			p
+	
 				text-align: justify
 				line-height: 24px
 				font-size: 15px
@@ -361,6 +430,9 @@ section.mini-galery
 				margin-right: $gap / 2
 				@media (max-width: $mobile-medium)
 					width: 50% -$gap
+					margin: $gap / 2
+				@media (max-width: $mobile-small)
+					width: 100% -$gap
 					margin: $gap / 2
 				.image-holder
 					height: 265px
@@ -418,11 +490,29 @@ section.articles-list
 			width: 50% -$gap
 			margin-left: $gap / 2
 			margin-right: $gap / 2
-			margin-bottom: 21px
+			margin-bottom: $gap
 			background: rgba(128, 128, 128, 0.6)
+			@media (max-width: $mobile-medium)
+				width: 100% -$gap
+				margin-left: $gap / 2
+				margin-right: $gap / 2
+
 			.image-holder
 				text-align: left
 				height: 294px
+				&:after
+					content: ''
+					position: absolute
+					left: 0
+					top: 0
+					width: 100%
+					height: 100%
+					background: #000
+					opacity: 0
+					transition: opacity 0.2s
+				&:hover:after
+					opacity: 0.3
+					transition: opacity 0.2s
 				@media (max-width: $medium)
 					height: 316px
 				img
@@ -431,6 +521,7 @@ section.articles-list
 					font-family: CenturyGothic
 					font-size: 28px
 					line-height: 52px
+					font-weight: 100
 					margin-bottom: 0
 					color: #fff
 					position: absolute
@@ -438,12 +529,14 @@ section.articles-list
 					bottom: 0
 					width: 100%
 					padding-left: 26px
-					background: url(../img/images/shad-arts.png)
 					background-size: cover
 					height: 57px
 					overflow: hidden
+					transition: background .2s
+					z-index: 1
 					@media (max-width: $mobile-large)
 						margin-top: 0
+				
 					
 // footer
 section.footer
@@ -454,9 +547,9 @@ section.footer
 		padding-top: 76px
 	.inline-holder.first-lv
 		.inline-el.nav-list
-			width: 75%
+			width: 65%
 			@media (max-width: $mobile-large)
-				width: 50%
+				width: 100%
 			ul
 				padding: 0
 				@media (max-width: $mobile-small)
@@ -471,30 +564,26 @@ section.footer
 						font-weight: 400
 						text-align: center
 		.inline-el.social-list
-			width: 25%
+			width: 35%
 			text-align: right
 
 			@media (max-width: $mobile-large)
-				width: 50%
+				width: 100%
 			ul
-				padding-right: 15px
-				padding-left: 0
+				padding: 15px 15px
 				@media (max-width: $mobile-small)
 					margin-top: 0
 					position: relative
 					top: 8px
 				li.inline-el
-					margin-left: 18%
+					margin-left: 15px
 					position: relative
-					@media (max-width: $mobile-small)
-						display: block
-						margin-bottom: 15px 
 					a
 						i.fa
 							color: #fff
-							font-size: 25px
+							font-size: 20px
 					&.facebook
-						top: -6px;
+						top: -6px
 						@media (max-width: $mobile-small)
 							top: 0
 					&.twitter
@@ -518,7 +607,9 @@ section.photo-collections
 				width: 50% -$gap
 				margin-left: $gap / 2
 				margin-right: $gap / 2
-				margin-bottom: 4px;
+				margin-bottom: 4px
+				@media (max-width: $tablet)
+					width: 50% -$gap
 				@media (max-width: $mobile-large)
 					width: 100% -$gap
 				a
@@ -529,73 +620,93 @@ section.photo-collections
 						font-family: CenturyGothic
 						font-size: 20px
 						margin-top: 28px
-						padding-left: 26px
+						// padding-left: 26px
 						margin-bottom: 24px
 
-					.image-holder
-						height: 300px
-						.description-holder
-							position: absolute
-							top: 0
-							left: 0
-							background: rgba(134, 130, 130, 0.9)
-							height: 100%
-							width: 100%
-							opacity: 0
-							transition: 0.5s
-							&:hover
-								opacity: 1
-								transition: 0.2s
+		.image-holder
+			height: 300px
+			.description-holder
+				position: absolute
+				top: 0
+				left: 0
+				background: rgba(134, 130, 130, 0.9)
+				height: 100%
+				width: 100%
+				opacity: 0
+				transition: 0.5s
+				&:hover
+					opacity: 1
+					transition: 0.2s
 
-							p
-								padding: 20px 20px 20px 24px
-								color: white
-								font-family: CenturyGothic
-								@media (max-width: $tablet)
-									font-size: 14px
-							button
-								width: 121px
-								height: 31px
-								color: white
-								font-family: CenturyGothic
-								font-size: 12px
-								background: #37b34a	
-								border: none
-								outline: none
-								position: absolute
-								right: 32px
-								bottom: 74px
-								@media (max-width: $tablet)
-									bottom: 50px
+				p
+					padding: 20px 20px 20px 24px
+					color: white
+					font-family: CenturyGothic
+					line-height: 20px
+					text-align: justify
+					@media (max-width: $tablet)
+						font-size: 14px
+				button
+					width: 121px
+					height: 31px
+					color: white
+					font-family: CenturyGothic
+					font-size: 12px
+					background: #37b34a	
+					border: none
+					outline: none
+					position: absolute
+					right: 32px
+					bottom: 34px
+					@media (max-width: $tablet)
+						bottom: 50px
 	&.services
 		margin-top: 28px
-		h2
-			color: #231f20
-			font-family: CenturyGothic
-			font-size: 20px
-			font-weight: 700
-			padding-left: 25px
-			margin-bottom: 25px
-		.inline-holder
-			.inline-el
-				margin-bottom: 24px
-				a
-					.image-holder
-						height: 265px
-						.description-holder
-							opacity: 1
-							width: 50%
-							background: rgba(84, 79, 79, 0.9)
-							h2
-								color: white
-								font-size: 28px
-								position: absolute
-								transform: translateY(-50%)
-								top: 50%
-								margin: 0
-								@media (max-width: $mobile-small)
-									font-size: 18px
-									padding-left: 20px
+		margin-bottom: 70px
+		$gap: 1.6%
+		.main-container
+			.inline-holder
+				margin-left: $gap / -2
+				margin-right: $gap / -2
+				.inline-el
+					width: 33.333% - $gap
+					margin-left: $gap / 2
+					margin-right: $gap / 2
+					margin-bottom: 4px
+					@media (max-width: $tablet)
+						width: 50% -$gap
+					@media (max-width: $mobile-large)
+						width: 100% -$gap
+		.image-holder
+			height: 360px
+		a
+			h2
+				color: #231f20
+				font-family: CenturyGothic
+				font-size: 20px
+				font-weight: 700
+				padding-left: 0px
+				margin-bottom: 25px
+		// .inline-holder
+		// 	.inline-el
+		// 		margin-bottom: 24px
+		// 		a
+		// 			.image-holder
+		// 				height: 265px
+		// 				.description-holder
+		// 					opacity: 1
+		// 					width: 50%
+		// 					background: rgba(84, 79, 79, 0.9)
+		// 					h2
+		// 						color: white
+		// 						font-size: 28px
+		// 						position: absolute
+		// 						transform: translateY(-50%)
+		// 						top: 50%
+		// 						margin: 0
+		// 						@media (max-width: $mobile-small)
+		// 							font-size: 18px
+		// 							padding-left: 20px
 
 //order
 section.order
@@ -612,9 +723,12 @@ section.order
 		font-weight: 400
 		margin-bottom: 20px
 
-	button
+	button,
+	.button
+		display: inline-block
 		width: 206px
 		height: 37px
+		line-height: 37px
 		color: white
 		font-family: CenturyGothic
 		font-size: 16px
@@ -622,6 +736,11 @@ section.order
 		background: #37b34a
 		border: none
 		outline: none
+		opacity: 1
+		transition: opacity, .2s
+		&:hover
+			opacity: 0.7
+			transition: opacity, .2s
 
 //part-description
 section.part-description
@@ -754,7 +873,7 @@ section.contacts-holder
 		@media (max-width: $tablet)
 			width: 100%
 		.contacts-block
-			background: #E7E7E7;
+			background: #E7E7E7
 			padding: 20px
 			margin-bottom: 40px
 			h4
@@ -763,3 +882,362 @@ section.contacts-holder
 				color: #b70108
 			a
 				color: #b70108
+.policy-holder
+	margin: 70px 0
+	.privacy-policy
+		font-family: CenturyGothic
+		h2
+			text-transform: uppercase
+			font-family: CenturyGothic
+		p
+			color: #716c6c
+			font-size: 16px
+			font-family: CenturyGothic
+
+
+
+section.subscriptions
+	$gap: 1.6%
+	.inline-holder
+		margin-left: $gap / -2
+		margin-right: $gap / -2
+		.inline-el
+			width: 50% -$gap
+			margin-left: $gap / 2
+			margin-right: $gap / 2
+			margin-bottom: $gap
+			@media (max-width: $mobile-large)
+				width: 100% -$gap
+	.subscription-block
+		margin-top: 40px
+		.image-holder
+			&.getty
+				width: 180px
+			&.istock
+				width: 94px
+		h2
+			text-transform: uppercase
+			margin: 0
+			font-weight: 400
+			font-family: CenturyGothic
+		.text-holder
+			overflow: hidden
+			height: 150px
+			&.main
+				height: 107px
+			p
+				margin-top: 20px
+				color: #716c6c
+				font-size: 16px
+				font-family: CenturyGothic
+
+.call-us
+	p
+		color: #716c6c
+		font-size: 16px
+		font-family: CenturyGothic
+	.description-holder
+		text-align: center
+		margin: 110px 0
+		margin-top: 40px
+		h4
+			font-weight: 400
+			display: inline-block
+			margin: 0 auto
+			padding: 10px
+			background: #372320
+			color: #fff
+			text-transform: uppercase
+			font-family: CenturyGothic
+		p
+			text-align: left
+			margin: 40px 0
+		a
+			display: inline-block
+			padding: 10px
+			min-width: 206px
+			color: white
+			font-family: CenturyGothic
+			background: #37b34a
+			opacity: 1
+				transition: opacity, .2s
+			&:hover
+				opacity: 0.8
+				transition: opacity, .2s
+
+.contacts-description
+	$gap: 1.6%
+	font-family: CenturyGothic
+	margin-top: 70px
+	color: #716c6c
+	.inline-holder
+		margin-left: $gap / -2
+		margin-right: $gap / -2
+		.inline-el
+			width: 50% -$gap
+			margin-left: $gap / 2
+			margin-right: $gap / 2
+			margin-bottom: $gap
+			@media (max-width: $mobile-large)
+				width: 100% -$gap
+	h3
+		font-weight: 400
+		font-size: 24px
+
+
+.map-section
+	.map-holder
+		#map
+			height: 350px
+
+.team-section
+	$gap: 1.6%
+	font-family: CenturyGothic
+	color: #716c6c
+	margin: 70px 0
+	h2
+		text-transform: uppercase
+		color: #716c6c
+	.inline-holder
+		margin-left: $gap / -2
+		margin-right: $gap / -2
+		.inline-el
+			width: 33.333% -$gap
+			margin-left: $gap / 2
+			margin-right: $gap / 2
+			margin-bottom: $gap
+			@media (max-width: $tablet)
+				width: 50% -$gap
+			@media (max-width: $mobile-large)
+				width: 100% -$gap
+	.contact-block
+		margin-top: 20px
+	.image-holder
+		height: 360px
+		.description-holder
+			padding: 20px
+			position: absolute
+			top: 0
+			left: 0
+			background: rgba(134, 130, 130, 0.9)
+			height: 100%
+			width: 100%
+			opacity: 0
+			transition: 0.5s
+			text-align: left
+			&:hover
+				opacity: 1
+				transition: 0.2s
+			.text
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+			p
+				color: white
+				font-family: CenturyGothic
+				margin: 0
+			a
+				font-family: CenturyGothic
+				color: #dedede
+	.text-holder
+		margin-bottom: 10px
+		height: 44px
+		overflow: hidden
+		p
+			margin: 0
+			font-size: 19px
+			color: #3c3c3c
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+		a
+			color: #716c6c
+
+.main-modal
+	position: fixed
+	overflow-y: auto
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	opacity: 0
+	pointer-events: none
+	transition: opacity .2s
+	z-index: 30
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: #fff
+		opacity: 1
+	&.open
+		opacity: 1
+		pointer-events: inherit
+		transition: opacity .2s
+	.top-line
+		// max-width: 1120px
+		padding-top: 0
+		padding-bottom: 50px
+		margin: 0 auto
+		margin-top: 20px
+		position: relative
+		border-bottom: 1px solid #bfbebe
+		// margin-top: 40px
+		// @media (max-width: $mobile-large)
+		// 	padding-bottom: 20px
+		.main-container
+			position: relative
+			max-width: 850px
+			.right-part
+				top: 0px
+				@media (max-width: $tablet)
+					top: 47px
+			.left-part
+				top: 0px
+				@media (max-width: $tablet)
+					top: 47px
+	h3
+		margin-top: 0
+		color: #4c4b4b
+		font-weight: 400
+		font-size: 28px
+	.socials
+		padding: 0
+		a
+			display: inline-block
+			color: #9d9b9b
+			border: 1px solid #9d9b9b
+			border-radius: 50%
+			height: 40px
+			width: 40px
+			text-align: center
+			line-height: 40px
+			margin: 5px
+			font-size: 20px
+	.form-holder
+		position: relative
+		// left: 50%
+		// top: 50%
+		// transform: translateX(-50%) translateY(-50%)
+		width: 100%
+		max-width: 850px
+		width: 100%
+		margin: 0 auto
+		padding-top: 50px
+		@media (max-width: $medium)
+			padding-left: 35px
+			padding-right: 35px
+		@media (max-width: $mobile-large)
+			margin-top: 50px
+			padding-top: 0
+			padding-left: 25px
+			padding-right: 5px
+		.scroll-holder
+			overflow: auto
+			max-height: 80vh
+			@media (max-width: $mobile-large)
+				max-height: 60vh
+		.inputs
+			max-width: 49%
+			width: 100%
+			padding-right: 30px
+			position: relative
+			@media (max-width: $mobile-large)
+				max-width: 100%
+			&:after
+				content: ''
+				position: absolute
+				right: 0px
+				top: 0
+				height: 100%
+				width: 1px
+				background: #aba9a9
+				@media (max-width: $mobile-large)
+					display: none
+		.contacts
+			max-width: 49%
+			width: 100%
+			padding-left: 30px
+			margin-bottom: 40px
+		    color: #9d9b9b
+
+			@media (max-width: $mobile-large)
+				display: none
+				padding-left: 0
+			&.mobile
+				display: none
+				@media (max-width: $mobile-large)
+					display: inline-block
+			h5
+				color: #9d9b9b
+				font-weight: 400
+				font-size: 15px
+			p
+				font-size: 14px
+				margin: 3px 0px
+				color: #9d9b9b
+				a
+					color: #9d9b9b
+			@media (max-width: $mobile-large)
+				max-width: 100%
+
+
+		.form-group
+			margin-bottom: 25px
+		label,
+		input,
+		textarea,
+		select
+			display: block
+			width: 100%
+			font-family: CenturyGothic
+			transform: translateZ(0)
+			outline: none
+			color: #9d9b9b
+		select
+			padding: 5px
+		textarea
+			resize: none
+			padding: 5px
+			border: 1px solid darkgrey
+			height: 150px
+		input
+			padding: 5px
+			border: 1px solid darkgrey
+		label
+			margin-bottom: 5px
+			font-size: 14px
+		button
+			width: 206px
+			height: 37px
+			color: white
+			font-family: CenturyGothic
+			font-size: 16px
+			font-weight: 400
+			background: #37b34a
+			border: none
+			outline: none
+			opacity: 1
+			transition: opacity, .2s
+			margin: 50px auto 0
+			display: block
+			&:hover
+				opacity: 0.7
+				transition: opacity, .2s
+
+	.close-btn
+		position: absolute
+		top: 10px
+		right: 10px
+		z-index: 5
+		text-align: center
+	
+
+
+.page-404
+	padding: 70px 0

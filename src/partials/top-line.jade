@@ -1,38 +1,38 @@
 section.top-line
-	.main-container
+	.main-container.logos
 		.inline-holder
 			.left-part.inline-el
 				.image-holder
-					a(href="index.html")
+					a(href="http://www.gettyimages.com/")
 						img(src="img/icons/global-images-logo.png", alt="")
 			.right-part.inline-el
 				.image-holder
-					a(href="index.html")
+					a(href="http://www.gettyimages.com/")
 						img(src="img/icons/gettyimg.png", alt="")
 	.main-nav
 		.nav-container
 			ul.inline-holder
-				mixin navitem(url, name)
+				mixin navitem(url, name, class1)
 					li.inline-el
-						a(href= url)= name
+						a(href= url, class= (class1) ? "active" : "")= name
 
-				+navitem('', 'О нас')
-				+navitem('/photo.html', 'Фото')
-				+navitem('/video.html', 'Видео')
-				+navitem('/music.html', 'Музыка')
-				+navitem('/services.html', 'iStock')
-				+navitem('/contacts.html', 'Подписки')
-				+navitem('/contacts.html', 'Контакты')
+				+navitem('index.html', 'О нас', 'active')
+				+navitem('photo.html', 'Фото')
+				+navitem('video.html', 'Видео')
+				+navitem('music.html', 'Музыка')
+				+navitem('http://www.istockphoto.com/ru', 'iStock')
+				+navitem('subscription.html', 'Подписки')
+				+navitem('contacts.html', 'Контакты')
 			div.mobile-btn-holder
 				div#m-nav-btn
 					span
 					span
 					span
-					span
 			ul#mobile-menu
+				+navitem('index.html', 'О нас', 'active')
 				+navitem('photo.html', 'Фото')
 				+navitem('video.html', 'Видео')
 				+navitem('music.html', 'Музыка')
-				+navitem('istock.html', 'iStock')
-				+navitem('services.html', 'Наши услуги и сервисы')
+				+navitem('http://www.istockphoto.com/ru', 'iStock')
+				+navitem('subscription.html', 'Подписки')
 				+navitem('contacts.html', 'Контакты')

@@ -6,19 +6,32 @@ section.footer
 					mixin footmenuitem(href, text)
 						li.inline-el
 							a(href= href)= text
-					+footmenuitem('#', 'Истории и тренды')
-					+footmenuitem('#', 'Сервисы')
-					+footmenuitem('#', 'Правовая информация')
-					+footmenuitem('#', 'Контакты')
+					+footmenuitem('http://stories.gettyimages.com/', 'Истории и тренды')
+					+footmenuitem('services.html', 'Сервисы')
+					+footmenuitem('privacy-policy.html', 'Политика конфиденциальности')
+					+footmenuitem('contacts.html', 'Контакты')
 			.inline-el.social-list
-				ul
-					mixin footsocitem(href, src, cls)
-						li.inline-el(class= cls)
-							a(href= href)
-								img(src= src, alt= src)
-
-					+footsocitem('#', 'img/icons/facebook-foot-icon.png', 'facebook')
-					+footsocitem('#', 'img/icons/twitter-foot-icon.png', 'twitter')
-					+footsocitem('#', 'img/icons/instagram-foot-icon.png', 'instagram')
+				ul.inline-holder.socials
+					li.inline-el
+						a(href="#")
+							i.fa.fa-rss(aria-hidden="true")
+					li.inline-el
+						a(href="#")
+							i.fa.fa-facebook(aria-hidden="true")
+					li.inline-el
+						a(href="#")
+							i.fa.fa-twitter(aria-hidden="true")
+					li.inline-el
+						a(href="#")
+							i.fa.fa-youtube(aria-hidden="true")
+					li.inline-el
+						a(href="#")
+							i.fa.fa-tumblr(aria-hidden="true")
+					li.inline-el
+						a(href="#")
+							i.fa.fa-instagram(aria-hidden="true")
+					li.inline-el
+						a(href="#")
+							i.fa.fa-linkedin(aria-hidden="true")
 			p
 				|2016 © ООО Глобал Имидес Юкрейн осуществляет деятельность по лицензированию цифрового контента для использования профессионалами в средствах массовой информации, диджитал коммуникациях, рекламных компаниях и др. Все права на материалы охраняются в соответствии с законодательством Украины и не могут быть использованы без согласования с ООО Глобал Имиджес Юкрейн.

@@ -17,69 +17,100 @@ html(lang='en')
 
 		include ./partials/top-line.jade
 
-
-		section.services-header
+		section.main-bg.foto-bg
 			.main-container
-				h2|On top of licensing our suppliers’ valuable content, we are happy to provide you |with the following supplementary services, turning our collaboration effective |and complete.
-		
-		section.services-items#services-items
+				.text
+					p Наши услуги и сервисы
+		section.photo-collections.services
 			.main-container
 				.inline-holder
-					mixin servicesItem(src, head, description, href, hreftext)
+					mixin collectionsitem(desc, src, head  )
 						.inline-el
-							.image-holder
-								img(src= src, class='fake-image')
-								.img(style='background-image: url('+src+')')
-								.description-holder
-									h1= head
-									p= description
-									a(href= href)= hreftext
-							.item-head
-								h1= head
-					+servicesItem(
+							a(href="#")
+								h2= head
+								.image-holder
+									img.fake-img(src= src, alt= src)
+									.img(style= 'background-image: url('+ src +')')
+									.description-holder
+										p= desc
+										button View collection
+									
+					+collectionsitem(
+						'При невероятном богатстве выбора, который вы найдёте у нас, не всегда легко сразу сориентироваться и найти именно то, что вам нужно. Наши команда придет на помощь и оперативно представят подборки необходимых фотографий, видеоматериалов и музыки на любые темы.',
 						'img/content/collectionsitem1.jpg',
-						'SEARCH',
-						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
-						'#',
-						'GET A SEARCH'
+						'Поиск'
 					)
-					+servicesItem(
-						'img/content/collectionsitem2.jpg',
-						'INFO',
-						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
-						'#',
-						'GET A SEARCH'
+					+collectionsitem(
+						'Сообщите нам детали вашего проекта и мы расскажем о наших продуктах, порекомендуем и предложим лучшее решение которое на 100% подойдет именно вам - по бюджету, формату, способам и срокам доставки.',
+						'img/images/fotoman.jpg',
+						'Контроль затрат'
 					)
-					+servicesItem(
-						'img/content/collectionsitem3.jpg',
-						'SEARCH',
-						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
-						'#',
-						'GET A SEARCH'
+					+collectionsitem(
+						'Наша команда научит Вас быстро ориентироваться в поисковых системах сайтов и  экономить время на поиске нужного контента, мы расскажем о продуктах, дополнительных услугах и сервисах, которые откроют для вас еще больше возможностей для креатива и сделают ваш проект уникальным. ',
+						'img/content/artimg1.jpg',
+						'Обучение и тренинги'
 					)
-					+servicesItem(
-						'img/content/collectionsitem4.jpg',
-						'INFO',
-						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
-						'#',
-						'GET A SEARCH'
+					+collectionsitem(
+						'Неограниченные материалы высокого разрешения (hi-res), гарантированные редакторские кадры и развлекательные видео-ролики  для редакционного использования. Гибкий план по отношению к потребностям и предпочтениям Вашей компании, включающий правовую защиту и гарантии.',
+						'img/images/minimeating.jpg',
+						'Редакционные подписки'
 					)
-					+servicesItem(
-						'img/content/collectionsitem5.jpg',
-						'SEARCH',
-						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
-						'#',
-						'GET A SEARCH'
+					+collectionsitem(
+						'Rights & Clearance – комплексное решение для клиентов при получении разрешений и очистки прав на использование в коммерческих целях изображений (реклама, маркетинг, эдверториал), которые не были предварительно очищены для использования в коммерческих целях.',
+						'img/images/minimeating.jpg',
+						'Очистка прав'
 					)
-					+servicesItem(
-						'img/content/collectionsitem6.jpg',
-						'INFO',
-						'Based on your briefs and guidelines, our professional team searches all the available assets (images, video,  audio tracks) and delivers the right creative solution.The editorial specialists can put together content ideas on various subjects celebrities, fashion, sports, lifestyle) for publishing on all media platforms.',
-						'#',
-						'GET A SEARCH'
+					+collectionsitem(
+						'Image Guarantee - страхование рисков, связанных с использованием имиджей без предварительной очистки в коммерческих целях.',
+						'img/images/minimeating.jpg',
+						'Image Guarantee'
+					)
+					+collectionsitem(
+						'Производство особенного, вызывающего доверия, креативного продукта, который охватывает нужную аудиторию и несет нужную идею, занимает много времени и усилий. Приобретая эксклюзивные права на материалы, вы с легкостью предотвратите ситуацию, когда ваш конкурент использует в своей рекламной кампании выбранное вами изображение. У вас есть возможность недорого и эффективно защитить ваши творческие активы. И эта возможность – покупка эксклюзивных прав.',
+						'img/images/minimeating.jpg',
+						'Exclusive rights'
+					)
+					+collectionsitem(
+						'Получите бесплатный персонализированный доступ в электронном виде к файлам высокого разрешения (hi-res) для использования в презентационных материалах. Getty Images разрешает бесплатное использование некоторых электронных файлов своих продуктов, в течение ограниченного периода времени, если они используются только в личных, некоммерческих целях и исключительно для теста или подготовки образцовых предложений.',
+						'img/images/minimeating.jpg',
+						'Презентационный доступ'
+					)
+					+collectionsitem(
+						'Получите бесплатный персонализированный доступ в электронном виде к файлам высокого разрешения (hi-res) для использования в презентационных материалах. Getty Images разрешает бесплатное использование некоторых электронных файлов своих продуктов, в течение ограниченного периода времени, если они используются только в личных, некоммерческих целях и исключительно для теста или подготовки образцовых предложений.',
+						'img/images/minimeating.jpg',
+						'Презентационный доступ'
+					)
+		//- section.photo-collections.services
+			.main-container
+				h2 Наши услуги и сервисы
+				.inline-holder
+					mixin collectionsitem(head, src  )
+						.inline-el
+							a(href="#")
+								.image-holder
+									img.fake-img(src= src, alt= src)
+									.img(style='background-image: url('+ src +')')
+									.description-holder
+										h2= head
+					+collectionsitem(
+						
+						'Архивный календарь',
+						'img/content/collectionsitem1.jpg'
+					)
+					+collectionsitem(
+						'Архивный календарь',
+						'img/content/collectionsitem5.jpg'
+					)
+					+collectionsitem(
+						'Гид по поиску контента',
+						'img/content/collectionsitem6.jpg'
+					)
+					+collectionsitem(
+						'Истории и тренды',
+						'img/content/collectionsitem7.jpg'
 					)
 
-		include ./partials/order.jade
+		include ./partials/contact-form.jade
 
 
 

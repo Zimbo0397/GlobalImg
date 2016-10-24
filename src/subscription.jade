@@ -1,0 +1,78 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p= text
+
+doctype html
+html(lang='en')
+	head
+		title GLOBAL Images
+
+		include ./partials/head.jade
+
+	body
+
+		include ./partials/top-line.jade
+
+		section.main-bg.foto-bg
+			.main-container
+				.text
+					p Наши подписки
+		
+
+		section.subscriptions
+			.main-container
+				.inline-holder
+					.subscription-block.inline-el
+						.image-holder.getty
+							img(src="img/icons/gettyimg.png", alt="")
+						.text-holder.main
+							p
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .
+					.subscription-block.inline-el
+						.image-holder.istock
+							img(src="img/icons/istock-logo.svg", alt="")
+						.text-holder.main
+							p
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .
+					.subscription-block.inline-el
+						h2 Premium Access
+						.text-holder
+							p
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .
+					.subscription-block.inline-el
+						h2 Essential
+						.text-holder
+							p
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .
+					.subscription-block.inline-el
+						h2 Редакционные подписки
+						.text-holder
+							p
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .
+					.subscription-block.inline-el
+						h2 Signature
+						.text-holder
+							p
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, .
+
+		section.call-us
+			.main-container
+				p Позвоните нам чтобы узнать больше
+				.description-holder
+					h4 Почему iStock by Getty Images?
+					p
+						|Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga facilis, aperiam voluptatum veritatis asperiores placeat, iusto eos iste magnam ab vitae. Magnam aliquid, labore culpa expedita eaque consequatur maxime.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga facilis, aperiam voluptatum veritatis asperiores placeat, iusto eos iste magnam ab vitae. Magnam aliquid, labore culpa expedita eaque consequatur maxime.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga facilis, aperiam voluptatum veritatis asperiores placeat, iusto eos iste magnam ab vitae. Magnam aliquid, labore culpa expedita eaque consequatur maxime.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga facilis, aperiam voluptatum veritatis asperiores placeat, iusto eos iste magnam ab vitae. Magnam aliquid, labore culpa expedita eaque consequatur maxime.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga facilis, aperiam voluptatum veritatis asperiores placeat, iusto eos iste magnam ab vitae. Magnam aliquid, labore culpa expedita eaque consequatur maxime.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo fuga facilis, aperiam voluptatum veritatis asperiores placeat, iusto eos iste magnam ab vitae. Magnam aliquid, labore culpa expedita eaque consequatur maxime.
+					a(href="http://www.istockphoto.com/ru") Искать на IStock
+
+
+		include ./partials/footer.jade
+
+
+
+
+
+	include ./partials/scripts.jade
