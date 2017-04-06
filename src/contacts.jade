@@ -23,83 +23,139 @@ html(lang='en')
 				.text
 					p НАШИ КОНТАКТЫ
 
-		section.contacts-description
-			.main-container
+		//- section.contacts-description
+		//- 	.main-container
+		//- 		.inline-holder
+		//- 			.inline-el
+		//- 				h3 GLOBAL IMAGES UKRAINE
+		//- 				p
+		//- 					|Эксклюзивный представитель 
+		//- 					a(href="www.gettyimages.com") Getty images 
+		//- 					| в Украине, мирового лидера по созданию, распространению и лицензированию всех видов цифрового контента
+		//- 			.inline-el
+		//- 				h3
+		//- 					a(href="tel:+38 (044) 277 99 66") +38 (044) 277 99 66
+		//- 				p
+		//- 					|ООО "ГЛОБАЛ ИМИДЖЕС ЮКРЕЙН"/ Getty images Master Delegate Украина 01032г.
+		//- 					a(href="tel:+38 (044) 277 99 66")  +38 (044) 277 99 66
+		//- 					|  Киев,ул.Саксаганского,119,8эт. email:
+		//- 					a(href="") ukraine@globalimages.com.ua
+		.form-holder
+			form(action="")
 				.inline-holder
-					.inline-el
-						h3 GLOBAL IMAGES UKRAINE
-						p
-							|Эксклюзивный представитель 
-							a(href="www.gettyimages.com") Getty images 
-							| в Украине, мирового лидера по созданию, распространению и лицензированию всех видов цифрового контента
-					.inline-el
-						h3
-							a(href="tel:+38 (044) 277 99 66") +38 (044) 277 99 66
-						p
-							|ООО "ГЛОБАЛ ИМИДЖЕС ЮКРЕЙН"/ Getty images Master Delegate Украина 01032г.
-							a(href="tel:+38 (044) 277 99 66")  +38 (044) 277 99 66
-							|  Киев,ул.Саксаганского,119,8эт. email:
-							a(href="") ukraine@globalimages.com.ua
+					//- .contacts.inline-el.mobile
+					//- 	h3 Связаться с нами
+					//- 	h5 ООО "ГЛОБАЛ ИМИДЖЕС ЮКРЕЙН" 
+					//- 	p Getty Images Master Delegate 
+					//- 	p Украина 01032 г. Киев
+					//- 	p ул. Саксаганского, 119, 8 эт.
+					//- 	p
+					//- 		a(href="tel:38 044 277 9966") Tel:+38 044 277 9966
+					//- 	p
+					//- 		a(href="mailto:ukraine@globalimages.com.ua") Email: ukraine@globalimages.com.ua
+						
 
-		section.team-section
-			.main-container
-				h2 Встречайте Команду
-				.inline-holder
-					mixin minigalitem(text, href, src)
-						.contact-block.inline-el
-							.text-holder
-								p= text
-								p= href 
-							.image-holder
-								img.fake-img(src= src, alt= src)
-								.img(style= 'background-image: url('+ src +')')
-								.description-holder
-									.text
-										p Address: The White House. 1600 Pennsylvania Avenue, NW.
-										p
-											a(href="tel:5545545455454") Tel: +5545545455454
-										p
-											a(href="mailto:president@whitehouse.gov") Email: president@whitehouse.gov
-					+minigalitem(
-					'Кирилл Матвиенко',
-					'партнер',
-					'img/content/sliderimg8.jpg'
-					)
-					+minigalitem(
-					'Кирилл Матвиенко',
-					'партнер',
-					'img/content/sliderimg8.jpg'
-					)
-					+minigalitem(
-					'Кирилл Матвиенко',
-					'партнер',
-					'img/content/sliderimg8.jpg'
-					)
-					+minigalitem(
-					'Кирилл Матвиенко',
-					'партнер',
-					'img/content/sliderimg8.jpg'
-					)
-					+minigalitem(
-					'Кирилл Матвиенко',
-					'партнер',
-					'img/content/sliderimg8.jpg'
-					)
-					+minigalitem(
-					'Кирилл Матвиенко',
-					'партнер',
-					'img/content/sliderimg8.jpg'
-					)
-					+minigalitem(
-					'Кирилл Матвиенко',
-					'партнер',
-					'img/content/sliderimg8.jpg'
-					)
-					+minigalitem(
-					'Кирилл Матвиенко',
-					'партнер',
-					'img/content/sliderimg8.jpg'
-					)
+					.inputs.inline-el
+						h3 Отправить запрос
+						.form-group
+							label(for="") Выбрать тип запроса
+							select#3dfed(name="")
+								option(selected , disabled)
+								option Получить Смету
+								option Купить Подписку
+								option Заказать подборку фото/видео/музыка
+								option Дополнительные услуги
+						.form-group
+							label(for="") Имя
+							input(type="text")
+						.form-group
+							label(for="") E-mail
+							input(type="text")
+						.form-group
+							label(for="") Телефон
+							input(type="text")
+						.form-group
+							.comment
+								label(for="") Текст
+								textarea#textarea
+							button Отправить
+
+					.contacts.inline-el
+						h3 Contuct Us
+						h5 ООО "ГЛОБАЛ ИМИДЖЕС ЮКРЕЙН" 
+						p Getty Images Master Delegate 
+						p Украина 01032 г. Киев
+						p ул. Саксаганского, 119, 8 эт.
+						.devider
+						p
+							a(href="tel:38 044 277 9966")
+								|Tel:
+								span.red-col
+								|+38 044 277 9966
+						p
+							a(href="mailto:ukraine@globalimages.com.ua") Email: ukraine@globalimages.com.ua
+						.map-holder.inline-el
+							#map
+
+		//- section.team-section
+		//- 	.main-container
+		//- 		h2 Встречайте Команду
+		//- 		.inline-holder
+		//- 			mixin minigalitem(text, href, src)
+		//- 				.contact-block.inline-el
+		//- 					.text-holder
+		//- 						p= text
+		//- 						p= href 
+		//- 					.image-holder
+		//- 						img.fake-img(src= src, alt= src)
+		//- 						.img(style= 'background-image: url('+ src +')')
+		//- 						.description-holder
+		//- 							.text
+		//- 								p Address: The White House. 1600 Pennsylvania Avenue, NW.
+		//- 								p
+		//- 									a(href="tel:5545545455454") Tel: +5545545455454
+		//- 								p
+		//- 									a(href="mailto:president@whitehouse.gov") Email: president@whitehouse.gov
+		//- 			+minigalitem(
+		//- 			'Кирилл Матвиенко',
+		//- 			'партнер',
+		//- 			'img/content/sliderimg8.jpg'
+		//- 			)
+		//- 			+minigalitem(
+		//- 			'Кирилл Матвиенко',
+		//- 			'партнер',
+		//- 			'img/content/sliderimg8.jpg'
+		//- 			)
+		//- 			+minigalitem(
+		//- 			'Кирилл Матвиенко',
+		//- 			'партнер',
+		//- 			'img/content/sliderimg8.jpg'
+		//- 			)
+		//- 			+minigalitem(
+		//- 			'Кирилл Матвиенко',
+		//- 			'партнер',
+		//- 			'img/content/sliderimg8.jpg'
+		//- 			)
+		//- 			+minigalitem(
+		//- 			'Кирилл Матвиенко',
+		//- 			'партнер',
+		//- 			'img/content/sliderimg8.jpg'
+		//- 			)
+		//- 			+minigalitem(
+		//- 			'Кирилл Матвиенко',
+		//- 			'партнер',
+		//- 			'img/content/sliderimg8.jpg'
+		//- 			)
+		//- 			+minigalitem(
+		//- 			'Кирилл Матвиенко',
+		//- 			'партнер',
+		//- 			'img/content/sliderimg8.jpg'
+		//- 			)
+		//- 			+minigalitem(
+		//- 			'Кирилл Матвиенко',
+		//- 			'партнер',
+		//- 			'img/content/sliderimg8.jpg'
+		//- 			)
 					
 						
 						

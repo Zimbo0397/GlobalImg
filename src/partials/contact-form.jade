@@ -14,23 +14,23 @@
 
 		form(action="")
 			.inline-holder
-				.contacts.inline-el.mobile
-					h3 Связаться с нами
-					h5 ООО "ГЛОБАЛ ИМИДЖЕС ЮКРЕЙН" 
-					p Getty Images Master Delegate 
-					p Украина 01032 г. Киев
-					p ул. Саксаганского, 119, 8 эт.
-					p
-						a(href="tel:38 044 277 9966") Tel:+38 044 277 9966
-					p
-						a(href="mailto:ukraine@globalimages.com.ua") Email: ukraine@globalimages.com.ua
+				//- .contacts.inline-el.mobile
+				//- 	h3 Связаться с нами
+				//- 	h5 ООО "ГЛОБАЛ ИМИДЖЕС ЮКРЕЙН" 
+				//- 	p Getty Images Master Delegate 
+				//- 	p Украина 01032 г. Киев
+				//- 	p ул. Саксаганского, 119, 8 эт.
+				//- 	p
+				//- 		a(href="tel:38 044 277 9966") Tel:+38 044 277 9966
+				//- 	p
+				//- 		a(href="mailto:ukraine@globalimages.com.ua") Email: ukraine@globalimages.com.ua
 					
 
 				.inputs.inline-el
 					h3 Отправить запрос
 					.form-group
 						label(for="") Выбрать тип запроса
-						select#(name="")
+						select#3dfed(name="")
 							option(selected , disabled)
 							option Получить Смету
 							option Купить Подписку
@@ -57,8 +57,12 @@
 					p Getty Images Master Delegate 
 					p Украина 01032 г. Киев
 					p ул. Саксаганского, 119, 8 эт.
+					.devider
 					p
-						a(href="tel:38 044 277 9966") Tel:+38 044 277 9966
+						a(href="tel:38 044 277 9966")
+							|Tel:
+							span.red-col
+							|+38 044 277 9966
 					p
 						a(href="mailto:ukraine@globalimages.com.ua") Email: ukraine@globalimages.com.ua
 					

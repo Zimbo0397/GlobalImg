@@ -334,3 +334,10 @@ $(window).on('load', function() {
 $(window).on('load', function() {
 	$('#preloader').fadeOut();
 })
+
+
+$('.team-section .description-holder').each(function() {
+	$(this).on('click', function() {
+		$(this).toggleClass('active');
+	});
+});

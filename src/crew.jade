@@ -1,0 +1,97 @@
+- var mainpage = true
+
+//- //mixins//
+mixin aboutitem(header, text)
+	.inline-el
+		h3.ellipsis-text= header
+		p= text
+
+doctype html
+html(lang='en')
+	head
+		title GLOBAL Images
+
+		include ./partials/head.jade
+
+	body
+
+		include ./partials/top-line.jade
+
+
+		section.main-bg.contacts-bg
+			.main-container
+				.text
+					p команда
+
+		section.team-section
+			.main-container
+				h2 Встречайте Команду
+				.inline-holder
+					mixin minigalitem(text, href, src)
+						.contact-block.inline-el
+							.text-holder
+								p= text
+								p= href 
+							.image-holder
+								img.fake-img(src= src, alt= src)
+								.img(style= 'background-image: url('+ src +')')
+								.description-holder
+									.text
+										p
+											a(href="mailto:president@whitehouse.gov") president@whitehouse.gov
+					+minigalitem(
+					'Кирилл Матвиенко',
+					'партнер',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко',
+					'партнер',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко',
+					'партнер',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко',
+					'партнер',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко',
+					'партнер',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко',
+					'партнер',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко',
+					'партнер',
+					'img/content/sliderimg8.jpg'
+					)
+					+minigalitem(
+					'Кирилл Матвиенко',
+					'партнер',
+					'img/content/sliderimg8.jpg'
+					)
+					
+						
+						
+
+
+
+
+
+		
+		include ./partials/footer.jade
+
+
+
+
+
+	include ./partials/scripts.jade
