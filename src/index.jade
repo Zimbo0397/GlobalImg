@@ -16,90 +16,50 @@ html(lang='en')
 	body
 
 		include ./partials/top-line.jade
-		section.main-slider
-			.slider-holder
-				ul.bxslider
-					mixin sliderItem(src, src1, src2, text)
-						li
-							.inline-holder
-								.image-holder.inline-el
+		section.top-slider
+			.slider-container
+				.viewport
+					ul.carousel
+						mixin sliderItem(src, src1, src2, text)
+							li.slide
+								.image-holder
 									img.fake-img(src= src, alt= src)
 									.img(style= 'background-image: url('+ src +')')
-								.image-holder.inline-el
-									img.fake-img(src= src1, alt= src1)
-									.img(style= 'background-image: url('+ src1 +')')
-									if text
-									.captions
+									.text-holder
 										p= text
-								.image-holder.inline-el
-									img.fake-img(src= src2, alt= src2)
-									.img(style= 'background-image: url('+ src2 +')')
 							
-					+sliderItem(
-					'img/content/sliderimg6.jpg',
-					'img/content/sliderimg2.jpg',
-					'img/content/gettyImages-78033113.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg6.jpg',
-					'img/content/sliderimg2.jpg',
-					'img/content/gettyImages-78033113.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg6.jpg',
-					'img/content/sliderimg2.jpg',
-					'img/content/gettyImages-78033113.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg6.jpg',
-					'img/content/sliderimg2.jpg',
-					'img/content/gettyImages-78033113.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg6.jpg',
-					'img/content/sliderimg2.jpg',
-					'img/content/gettyImages-78033113.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-			.mobile-slider-holder
-				ul.bxslider-mobile
-					mixin sliderItem(src, text)
-						li
-							.inline-holder
-								.image-holder.inline-el
-									img.fake-img(src= src, alt= src)
-									.img(style= 'background-image: url('+ src +')')
-								if text
-								.captions
-									p= text
+						+sliderItem(
+						'img/content/sliderimg1.jpg',
+						'img/content/sliderimg1.jpg',
+						'img/content/gettyImages-78033113.jpg',
+						'Глобальное покрытие текущих спортивных событий ')
+						+sliderItem(
+						'img/content/sliderimg2.jpg',
+						'img/content/sliderimg2.jpg',
+						'img/content/gettyImages-78033113.jpg',
+						'Глобальное покрытие текущих спортивных событий ')
+						+sliderItem(
+						'img/content/sliderimg3.jpg',
+						'img/content/sliderimg3.jpg',
+						'img/content/gettyImages-78033113.jpg',
+						'Глобальное покрытие текущих спортивных событий ')
+						+sliderItem(
+						'img/content/sliderimg4.jpg',
+						'img/content/sliderimg4.jpg',
+						'img/content/gettyImages-78033113.jpg',
+						'Глобальное покрытие текущих спортивных событий ')
+						+sliderItem(
+						'img/content/sliderimg5.jpg',
+						'img/content/sliderimg5.jpg',
+						'img/content/gettyImages-78033113.jpg',
+						'Глобальное покрытие текущих спортивных событий ')
 
-					+sliderItem(
-					'img/content/sliderimg6.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg2.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/gettyImages-78033113.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg6.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg2.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/gettyImages-78033113.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg6.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/sliderimg2.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-					+sliderItem(
-					'img/content/gettyImages-78033113.jpg',
-					'Глобальное покрытие текущих спортивных событий ')
-				
+						li.slide
+							.image-holder
+								video.fit-img(autoplay="autoplay", muted, loop="loop")
+									source(src="https://df4gxzhrgxhss.cloudfront.net/riosmall.mp4", type="video/mp4")
+							.text-holder
+								p Глобальное покрытие текущих спортивных событий
 				
 				
 
@@ -204,6 +164,7 @@ html(lang='en')
 							.image-holder
 								img.fake-img(src= src, alt= src)
 								.img(style= 'background-image: url('+ src +')')
+							.text-holder
 								h3!= header
 									
 					+articlesitem(

@@ -66,6 +66,13 @@ a
 	height: 340px
 	position: relative
 	background-size: cover
+	overflow: hidden
+	.image-holder
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
 	&.foto-bg
 		background-image: url(../img/images/foto-bg.jpg)
 	&.music-bg
@@ -94,9 +101,10 @@ a
 	position: relative
 	text-align: center
 	vertical-align: middle
-	img
+	img,video
 		vertical-align: middle
 		width: 100%
+		display: block
 	.fake-img
 		opacity: 0.001
 		position: relative
@@ -492,16 +500,16 @@ section.articles-list
 			margin-right: $gap / 2
 			margin-bottom: $gap
 			background: rgba(128, 128, 128, 0.6)
+			position: relative
 			@media (max-width: $mobile-medium)
 				width: 100% -$gap
 				margin-left: $gap / 2
 				margin-right: $gap / 2
-
 			.image-holder
 				text-align: left
 				height: 294px
 				&:after
-					content: ''
+					// content: ''
 					position: absolute
 					left: 0
 					top: 0
@@ -517,20 +525,21 @@ section.articles-list
 					height: 316px
 				img
 					display: inline-block
+			.text-holder
+				position: absolute
+				left: 0
+				bottom: 20px
 				h3
 					font-family: CenturyGothic
 					font-size: 28px
-					line-height: 52px
+					line-height: 35px
 					font-weight: 100
 					margin-bottom: 0
 					color: #fff
-					position: absolute
 					left: 0
 					bottom: 0
 					width: 100%
 					padding-left: 26px
-					background-size: cover
-					height: 57px
 					overflow: hidden
 					transition: background .2s
 					z-index: 1
@@ -582,6 +591,9 @@ section.footer
 						i.fa
 							color: #fff
 							font-size: 20px
+							&:hover
+								color: grey
+								transition: color .2s
 					&.facebook
 						top: -6px
 						@media (max-width: $mobile-small)
@@ -897,7 +909,7 @@ section.contacts-holder
 
 
 section.subscriptions
-	$gap: 1.6%
+	$gap: 1%
 	.inline-holder
 		margin-left: $gap / -2
 		margin-right: $gap / -2
@@ -909,12 +921,16 @@ section.subscriptions
 			@media (max-width: $mobile-large)
 				width: 100% -$gap
 	.subscription-block
-		margin-top: 40px
+		margin-top: 10px
 		.image-holder
+			text-align: left
 			&.getty
-				width: 180px
+				height: 32px
 			&.istock
-				width: 94px
+				height: 32px
+			img
+				height: 100%
+				width: auto
 		h2
 			text-transform: uppercase
 			margin: 0
@@ -947,7 +963,6 @@ section.subscriptions
 			padding: 10px
 			background: #372320
 			color: #fff
-			text-transform: uppercase
 			font-family: CenturyGothic
 		p
 			text-align: left
@@ -983,6 +998,8 @@ section.subscriptions
 	h3
 		font-weight: 400
 		font-size: 24px
+	a
+		color: inherit
 
 
 .map-section
@@ -1119,6 +1136,10 @@ section.subscriptions
 			line-height: 40px
 			margin: 5px
 			font-size: 20px
+			i.fa
+				&:hover
+				color: grey
+				transition: color .2s
 	.form-holder
 		position: relative
 		// left: 50%
@@ -1174,15 +1195,15 @@ section.subscriptions
 				@media (max-width: $mobile-large)
 					display: inline-block
 			h5
-				color: #9d9b9b
+				color: #4c4b4b
 				font-weight: 400
 				font-size: 15px
 			p
 				font-size: 14px
 				margin: 3px 0px
-				color: #9d9b9b
+				color: #4c4b4b
 				a
-					color: #9d9b9b
+					color: #4c4b4b
 			@media (max-width: $mobile-large)
 				max-width: 100%
 
@@ -1198,7 +1219,7 @@ section.subscriptions
 			font-family: CenturyGothic
 			transform: translateZ(0)
 			outline: none
-			color: #9d9b9b
+			color: #4c4b4b
 		select
 			padding: 5px
 		textarea
@@ -1241,3 +1262,137 @@ section.subscriptions
 
 .page-404
 	padding: 70px 0
+
+
+
+
+.slider-container
+	overflow: hidden
+	width: 100%
+	position: relative
+	.viewport
+		max-width: 650px
+		margin: 0 auto
+		.carousel
+			font-size: 0
+			padding: 0
+			margin: 0
+			&.animated
+				transition: transform .5s ease-in-out
+			
+			.slide
+				display: inline-block
+				width: 350px
+				.image-holder
+					height: 340px
+				.text-holder
+					background: rgba(0,0,0,0.7)
+					font-size: 20px
+					position: absolute
+					left: 30px
+					bottom: 20px
+					color: #fff
+					opacity: 0
+					transition: opacity .5s ease-in-out, left .3s ease-in-out
+					p
+						margin: 0
+						padding: 5px
+				&.active
+					.text-holder
+						opacity: 1
+						left: 20px
+						transition: opacity .5s ease-in-out, left .3s ease-in-out
+				&.fake-active
+					.text-holder
+						opacity: 1
+						left: 20px
+						transition: opacity .5s ease-in-out, left .3s ease-in-out
+
+.slide
+	position: relative
+	&:before
+		content: ''
+		color: #fff
+		font-size: 50px
+		position: absolute
+		height: 100%
+		width: 100%
+		background: #000
+		top: 0
+		left: 0
+		opacity: 0.3
+		transition: opacity .5s ease-in-out
+		z-index: 1
+	&.active
+		&:before
+			opacity: 0
+			transition: opacity .5s ease-in-out
+	&.fake-active
+		&:before
+			opacity: 0
+			transition: opacity .5s ease-in-out
+
+.slider-nav
+	position: absolute
+	bottom: 0
+	width: 100%
+	top: 50%
+	height: 0
+	transform: translateY(-50%)
+	#next-btn,
+	#prev-btn
+		width: 40px
+		height: 40px
+		position: absolute
+		top: 0
+		right: 0
+		cursor: pointer
+	#prev-btn
+		left: 0
+		right: auto
+		&:after
+			content: ''
+			position: absolute
+			height: 0px
+			width: 0px
+			border-left: 10px solid #fff
+			border-bottom: 10px solid #fff
+			border-right: 10px solid transparent
+			border-top: 10px solid transparent
+			top: 50%
+			left: 50%
+			margin-left: -7px
+			transform: rotate(45deg) translateX(-50%) translateY(-50%)
+
+	#next-btn
+		&:after
+			content: ''
+			position: absolute
+			height: 0px
+			width: 0px
+			border-right: 10px solid #fff
+			border-top: 10px solid #fff
+			border-left: 10px solid transparent
+			border-bottom: 10px solid transparent
+			top: 50%
+			left: 50%
+			margin-left: -15px
+			transform: rotate(45deg) translateX(-50%) translateY(-50%)
+
+#preloader
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	background: #fff
+	z-index: 1000
+	font-size: 55px
+	.fa,
+	img
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translateX(-50%) translateY(-50%)

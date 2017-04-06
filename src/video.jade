@@ -18,9 +18,12 @@ html(lang='en')
 		include ./partials/top-line.jade
 
 		section.main-bg.video-bg
-			.main-container
-				.text
-					p 2 МЛН АКТУАЛЬНЫХ ВИДЕО
+			.image-holder
+				video.fit-img(autoplay="autoplay", muted, loop="loop")
+					source(src="https://d3macfshcnzosd.cloudfront.net/052922736_main_xxl.mp4", type="video/mp4")
+				.main-container
+					.text
+						p 2 МЛН АКТУАЛЬНЫХ ВИДЕО
 		section.photo-collections
 			.main-container
 				.inline-holder
@@ -55,6 +58,14 @@ html(lang='en')
 						'img/content/artimg2.jpg',
 						'Постановочные фото'
 					)
+					.inline-el
+						h2 Редакционные видео
+						.image-holder
+							video.fit-img(autoplay="autoplay", muted, loop="loop")
+								source(src="https://d3macfshcnzosd.cloudfront.net/052922736_main_xxl.mp4", type="video/mp4")
+							.description-holder
+								p Images созданы на основе анализа мировых тенденций на рынке визу
+								button View collection
 		//- section.photo-collections.services
 			.main-container
 				h2 Наши услуги и сервисы
