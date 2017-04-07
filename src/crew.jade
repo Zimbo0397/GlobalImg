@@ -33,12 +33,12 @@ html(lang='en')
 								p= text
 								p= href 
 							.image-holder
-								img.fake-img(src= src, alt= src)
-								.img(style= 'background-image: url('+ src +')')
-								.description-holder
-									.text
-										p
-											a(href="mailto:president@whitehouse.gov") president@whitehouse.gov
+								a(href="mailto:president@whitehouse.gov") 
+									img.fake-img(src= src, alt= src)
+									.img(style= 'background-image: url('+ src +')')
+									.description-holder
+										.text
+											p president@whitehouse.gov
 					+minigalitem(
 					'Кирилл Матвиенко',
 					'партнер',

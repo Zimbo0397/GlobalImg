@@ -128,12 +128,17 @@ a
 	margin: 0 auto
 	@media (max-width: $medium)
 		padding-left: 15px	
-		padding-right: 15px
+		padding-right: 
 
-.logos
-	height: 50px
+.main-modal
+	.logos
+		height: 50px
+	.inputs
+		margin-bottom: 40px
 
-// /top-line/
+// /top-line
+.top-line-holder
+	padding-top: 61px
 .top-line
 	padding-top: 2px
 	padding-bottom: 15px
@@ -160,8 +165,16 @@ a
 		right: 55px
 		@media (max-width: $tablet)
 			right: 15px
+			display: none
 		@media (max-width: $mobile-small)
 			width: 108px
+	&.fixed
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		width: 100%;
+		background: white;
 		
 // /main-nav/
 .main-nav
@@ -563,12 +576,12 @@ section.footer
 				@media (max-width: $mobile-small)
 					margin-top: 0
 				li.inline-el
-					margin-right: 42px
+					margin-right: 8px
 					margin-bottom: 10px
 					a
 						color: white
 						font-family: CenturyGothic
-						font-size: 17px
+						font-size: 16px
 						font-weight: 400
 						text-align: center
 		.inline-el.social-list
@@ -1119,6 +1132,8 @@ section.subscriptions
 			max-width: 850px
 			.right-part
 				top: 15px
+				@media (max-width: $tablet)
+						display: inline-block
 			.left-part
 				top: 16px
 	.socials
