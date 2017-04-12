@@ -95,6 +95,7 @@ a
 			opacity: 0.9
 			padding: 11px 20px
 			text-transform: uppercase
+			text-align: center
 // image-holder
 .image-holder
 	overflow: hidden
@@ -208,7 +209,7 @@ a
 						display: block
 						position: absolute
 						width: 0
-						top: -54px
+						top: -15px
 						left: 0
 						height: 5px
 						background: #000
@@ -658,7 +659,9 @@ section.photo-collections
 				width: 100%
 				opacity: 0
 				transition: 0.5s
-				&:hover
+				&:hover,
+				&:active,
+				&:focus
 					opacity: 1
 					transition: 0.2s
 				p
@@ -669,7 +672,7 @@ section.photo-collections
 					text-align: justify
 					@media (max-width: $tablet)
 						font-size: 14px
-				button
+				.button
 					width: 121px
 					height: 31px
 					color: white
@@ -681,6 +684,8 @@ section.photo-collections
 					position: absolute
 					right: 32px
 					bottom: 34px
+					display: inline-block
+					line-height: 31px
 					@media (max-width: $tablet)
 						bottom: 50px
 	&.services
@@ -914,7 +919,7 @@ section.contacts-holder
 			font-family: CenturyGothic
 		p,
 		ul
-			color: #716c6c
+			color: #000
 			font-size: 16px
 			font-family: CenturyGothic
 
@@ -951,12 +956,12 @@ section.subscriptions
 			font-family: CenturyGothic
 		.text-holder
 			overflow: hidden
-			height: 150px
+			height: 137px
 			&.main
-				height: 107px
+				height: 119px
 			p
-				margin-top: 20px
-				color: #716c6c
+				margin-top: 10px
+				color: #000
 				font-size: 16px
 				font-family: CenturyGothic
 
@@ -965,7 +970,7 @@ section.subscriptions
 	ol,
 	ul,
 	li
-		color: #716c6c
+		color: #000
 		font-size: 16px
 		font-family: CenturyGothic
 		text-align: left
@@ -982,9 +987,10 @@ section.subscriptions
 			background: #37b34a
 			color: #fff
 			font-family: CenturyGothic
+			margin-bottom: 20px
 		p
 			text-align: left
-			margin: 40px 0
+			margin: 0
 		a
 			display: inline-block
 			padding: 10px
@@ -993,7 +999,8 @@ section.subscriptions
 			font-family: CenturyGothic
 			background: #37b34a
 			opacity: 1
-				transition: opacity, .2s
+			transition: opacity, .2s
+			margin-top: 20px
 			&:hover
 				opacity: 0.8
 				transition: opacity, .2s
@@ -1002,7 +1009,7 @@ section.subscriptions
 	$gap: 1.6%
 	font-family: CenturyGothic
 	margin-top: 70px
-	color: #716c6c
+	color: #000
 	.inline-holder
 		margin-left: $gap / -2
 		margin-right: $gap / -2
@@ -1192,7 +1199,7 @@ section.subscriptions
 		padding-left: 25px
 	h3
 		margin-top: 0
-		color: #4c4b4b
+		color: #000
 		font-weight: 400
 		font-size: 28px
 	.scroll-holder
@@ -1240,15 +1247,15 @@ section.subscriptions
 			@media (max-width: $mobile-large)
 				display: inline-block
 		h5
-			color: #4c4b4b
+			color: #000
 			font-weight: 400
 			font-size: 15px
 		p
 			font-size: 14px
 			margin: 3px 0px
-			color: #4c4b4b
+			color: #000
 			a
-				color: #4c4b4b
+				color: #000
 		@media (max-width: $mobile-large)
 			max-width: 100%
 
@@ -1266,7 +1273,7 @@ section.subscriptions
 		font-family: CenturyGothic
 		transform: translateZ(0)
 		outline: none
-		color: #4c4b4b
+		color: #000
 	select
 		padding: 5px
 	textarea

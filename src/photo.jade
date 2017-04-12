@@ -26,14 +26,13 @@ html(lang='en')
 				.inline-holder
 					mixin collectionsitem(desc, src, head  )
 						.inline-el
-							a(href="#")
-								h2= head
-								.image-holder
-									img.fake-img(src= src, alt= src)
-									.img(style= 'background-image: url('+ src +')')
-									.description-holder
-										p= desc
-										button View collection
+							h2= head
+							.image-holder
+								img.fake-img(src= src, alt= src)
+								.img(style= 'background-image: url('+ src +')')
+								.description-holder
+									p= desc
+									a(href="#").button View collection
 									
 					+collectionsitem(
 						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',

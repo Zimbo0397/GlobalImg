@@ -336,8 +336,8 @@ $(window).on('load', function() {
 })
 
 
-$('.team-section .description-holder').each(function() {
-	$(this).on('click', function() {
-		$(this).toggleClass('active');
-	});
-});
+// $('.team-section .description-holder').each(function() {
+// 	$(this).on('click', function() {
+// 		$(this).toggleClass('active');
+// 	});
+// });
