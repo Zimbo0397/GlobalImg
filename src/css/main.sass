@@ -61,7 +61,9 @@ a
 // 		img
 // 			width: auto
 // 			height: 100%
-
+h2
+	&.lite
+		font-weight: 100
 .main-bg
 	height: 340px
 	position: relative
@@ -132,6 +134,20 @@ a
 		padding-right: 
 
 .main-modal
+	padding-top: 30px
+	.close-btn
+		padding-top: 0px
+		background: url(../img/icons/close.svg) 50% 50% no-repeat
+		display: inline-block
+		position: absolute
+		top: 0px
+		right: 4px
+		z-index: 5
+		text-align: center
+		height: 25px
+		width: 24px
+		background-size: cover
+		display: inline-block
 	.logos
 		height: 50px
 	.inputs
@@ -170,12 +186,12 @@ a
 		@media (max-width: $mobile-small)
 			width: 108px
 	&.fixed
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 3;
-		width: 100%;
-		background: white;
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 3
+		width: 100%
+		background: white
 		
 // /main-nav/
 .main-nav
@@ -404,7 +420,7 @@ section.about
 	color: #231f20
 	font-family: CenturyGothic
 	line-height: 22px
-	padding-top: 47px
+	padding-top: 7px
 	@media (max-width: $mobile-large)
 		padding-top: 20px
 	h2
@@ -413,8 +429,8 @@ section.about
 		font-size: 30px
 		font-weight: 700
 		text-align: center
-		margin-top: 43px
-		margin-bottom: 49px
+		margin-top: 20px
+		margin-bottom: 0px
 		line-height: 32px
 	.inline-holder
 		margin-left: $gap / -2
@@ -429,11 +445,10 @@ section.about
 				font-size: 18px
 				font-weight: 700
 				text-align: center
-				margin-bottom: 32px
-	
 				text-align: justify
 				line-height: 24px
-				font-size: 15px
+				font-size: 22px
+				margin-bottom: 0
 
 // mini-galery
 section.mini-galery
@@ -569,7 +584,6 @@ section.footer
 		padding-top: 76px
 	.inline-holder.first-lv
 		.inline-el.nav-list
-			width: 65%
 			@media (max-width: $mobile-large)
 				width: 100%
 			ul
@@ -586,19 +600,20 @@ section.footer
 						font-weight: 400
 						text-align: center
 		.inline-el.social-list
-			width: 35%
-			text-align: right
-
+			margin-top: 16px
+			position: relative
+			display: block
 			@media (max-width: $mobile-large)
 				width: 100%
 			ul
 				padding: 15px 15px
+				padding-left: 0
 				@media (max-width: $mobile-small)
 					margin-top: 0
 					position: relative
 					top: 8px
 				li.inline-el
-					margin-left: 15px
+					margin-right: 15px
 					position: relative
 					a
 						i.fa
@@ -623,6 +638,11 @@ section.footer
 			font-size: 10px
 //photo-collections						
 section.photo-collections
+	&.news
+		margin-bottom: 62px
+		.lite
+			height: 87px
+			overflow: hidden 
 	$gap: 1.6%
 	.main-container
 		.inline-holder
@@ -939,7 +959,7 @@ section.subscriptions
 			@media (max-width: $mobile-large)
 				width: 100% -$gap
 	.subscription-block
-		margin-top: 10px
+		margin-top: 25px
 		.image-holder
 			text-align: left
 			&.getty
@@ -1122,7 +1142,7 @@ section.subscriptions
 		top: 0
 		width: 100%
 		height: 100%
-		background: #fff
+		// background: #fff
 		opacity: 1
 	&.open
 		opacity: 1
@@ -1184,19 +1204,21 @@ section.subscriptions
 	// left: 50%
 	// top: 50%
 	// transform: translateX(-50%) translateY(-50%)
+	box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75)
 	width: 100%
 	max-width: 850px
 	width: 100%
 	margin: 0 auto
-	padding-top: 32px
+	padding: 32px
+	background: #fff
 	@media (max-width: $medium)
 		padding-left: 35px
 		padding-right: 35px
 	@media (max-width: $mobile-large)
 		margin-top: 50px
 		padding-top: 0
-		padding-left: 25px
-		padding-left: 25px
+		padding-right: 10px
+		padding-left: 10px
 	h3
 		margin-top: 0
 		color: #000
@@ -1446,3 +1468,129 @@ section.subscriptions
 	background: red
 	position: relative
 	top: 1px
+
+
+
+
+.rngst_phone_button
+	position: fixed
+	bottom: 20px
+	left: 20px
+	display: block
+	height: 80px
+	width: 80px
+	-webkit-backface-visibility: hidden
+	-webkit-transform: translateZ(0)
+	opacity: .8
+	transition: all .3s ease-in-out
+	z-index: 999990 !important
+	-ms-transform-origin: 50% 50% 0
+	background: #a9e6f4
+	border-radius: 50%
+	&.sended
+		background: #a9e7a4
+		.rngst_phone_icon
+			background-image: url(../img/icons/green2.png)
+	
+
+
+.rngst_phone_icon
+	cursor: pointer
+	width: 60px
+	height: 60px
+	top: 9px
+	left: 6px
+	position: absolute
+	background-image: url(../img/icons/blue2.png)
+	background-position: center center
+	background-size: contain
+	background-repeat: no-repeat
+	z-index: 999993
+	-ms-transform-origin: 50% 50% 0
+	transform-origin: 50% 50% 0
+	animation: myarrow 1.25s linear 0s infinite alternate
+// .rngst_phone_circle
+// 	background: #0cb815
+// 	height: 70px
+// 	width: 70px
+// 	position: absolute
+// 	left: 65px
+// 	top: 65px
+// 	z-index: 999991
+// 	border: 1px solid #0cb815
+// 	border-radius: 50%
+// 	-webkit-animation: ringostat_pulse2 2.5s infinite ease-in-out
+// 	-moz-animation: ringostat_pulse2 2.5s infinite ease-in-out
+// 	-ms-animation: ringostat_pulse2 2.5s infinite ease-in-out
+// 	-o-animation: ringostat_pulse2 2.5s infinite ease-in-out
+// 	animation: ringostat_pulse2 2.5s infinite ease-in-out
+// 	transform-origin: 50% 50% 0
+// .rngst_phone_circle2
+// 	background: #0cb815
+// 	transform-origin: 50% 50% 0
+
+// .rngst_phone_fill
+// 	height: 120px
+// 	width: 120px
+// 	background: #0cb815
+// 	border-radius: 50%
+// 	position: absolute
+// 	top: 40px
+// 	left: 40px
+// 	z-index: 999991
+// 	-webkit-animation: ringostat_pulse 2.5s infinite ease-in-out
+// 	-moz-animation: ringostat_pulse 2.5s infinite ease-in-out
+// 	-ms-animation: ringostat_pulse 2.5s infinite ease-in-out
+// 	-o-animation: ringostat_pulse 2.5s infinite ease-in-out
+// 	animation: ringostat_pulse 2.5s infinite ease-in-out
+// 	transform-origin: 50% 50% 0
+// .rngst_phone_body
+// 	height: 60px
+// 	width: 60px
+// 	position: absolute
+// 	left: 70px
+// 	top: 70px
+// 	border-radius: 50%
+// 	z-index: 999992
+// 	box-shadow: 0 0 0 15px rgba(13,166,38,0)
+// 	-webkit-box-shadow: 0 0 0 15px rgba(13,166,38,0)
+// 	-moz-box-shadow: 0 0 0 15px rgba(13,166,38,0)
+// 	-ms-box-shadow: 0 0 0 15px rgba(13,166,38,0)
+// 	-o-box-shadow: 0 0 0 15px rgba(13,166,38,0)
+// 	box-shadow: 0 0 0 15px rgba(13,166,38,0)
+// 	-webkit-transition: box-shadow .8s ease-in-out
+// 	-moz-transition: box-shadow .8s ease-in-out
+// 	-ms-transition: box-shadow .8s ease-in-out
+// 	-o-transition: box-shadow .8s ease-in-out
+// 	transition: box-shadow .8s ease-in-out
+// 	// background: #fde29d
+// 	transform-origin: 50% 50% 0
+// 	pointer-events: inherit
+// 	cursor: pointer
+
+@keyframes myarrow
+	to
+		transform: scale(1)
+	from 
+		transform: scale(0.8)
+
+// @keyframes ringostat_pulse
+// 	0%
+// 		transform: scale(0.5)
+// 		opacity: 0.3
+
+// 	50%
+// 		transform: scale(0.7)
+// 		opacity: 0.2
+
+// 	100%
+// 		transform: scale(0.5)
+// 		opacity: 0
+// @keyframes ringostat_pulse2
+// 	0%
+// 		transform: scale(2)
+// 		opacity: 0
+
+// 	100%
+// 		transform: scale(0.6)
+// 		opacity: 0.8

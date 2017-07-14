@@ -17,19 +17,16 @@ html(lang='en')
 
 		include ./partials/top-line.jade
 
-		section.main-bg.video-bg
-			.image-holder
-				video.fit-img(autoplay="autoplay", muted, loop="loop")
-					source(src="https://d3macfshcnzosd.cloudfront.net/052922736_main_xxl.mp4", type="video/mp4")
-				.main-container
-					.text
-						p 2 МЛН АКТУАЛЬНЫХ ВИДЕО
-		section.photo-collections
+		section.main-bg.foto-bg
+			.main-container
+				.text
+					p 2,3 МЛРД ТЕМАТИЧЕСКИХ ФОТОГРАФИЙ		
+		section.photo-collections.news
 			.main-container
 				.inline-holder
 					mixin collectionsitem(desc, src, head  )
 						.inline-el
-							h2= head
+							h2.lite= head
 							.image-holder
 								img.fake-img(src= src, alt= src)
 								.img(style= 'background-image: url('+ src +')')
@@ -39,32 +36,24 @@ html(lang='en')
 									
 					+collectionsitem(
 						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
-						'img/content/collectionsitem4.jpg',
+						'img/content/collectionsitem1.jpg',
 						'Креативные фото '
 					)
 					+collectionsitem(
 						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
-						'img/images/collectionsitem544.jpg',
+						'img/images/fotoman.jpg',
 						'Редакционные фото'
 					)
 					+collectionsitem(
 						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
-						'img/images/fdferfr.jpg',
+						'img/content/artimg1.jpg',
 						'Архивные фото'
 					)
 					+collectionsitem(
 						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
-						'img/content/artimg2.jpg',
+						'img/images/minimeating.jpg',
 						'Постановочные фото'
 					)
-					.inline-el
-						h2 Редакционные видео
-						.image-holder
-							video.fit-img(autoplay="autoplay", muted, loop="loop")
-								source(src="https://d3macfshcnzosd.cloudfront.net/052922736_main_xxl.mp4", type="video/mp4")
-							.description-holder
-								p Images созданы на основе анализа мировых тенденций на рынке визу
-								button View collection
 		//- section.photo-collections.services
 			.main-container
 				h2 Наши услуги и сервисы

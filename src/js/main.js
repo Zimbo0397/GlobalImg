@@ -333,11 +333,23 @@ $(window).on('load', function() {
 
 $(window).on('load', function() {
 	$('#preloader').fadeOut();
+	$('.rngst_phone_button').on('click', function() {
+		$('.main-modal').toggleClass('open');
+		$('body').toggleClass('blackshadow');
+	});
+
+	$('.close-btn').on('click', function() {
+		$('.main-modal').removeClass('open');
+		$('body').removeClass('blackshadow');
+	});
+
+	$('#send-mail').on('submit', function() {
+		$('.main-modal').removeClass('open');
+		$('body').removeClass('blackshadow');
+	})
 })
 
 
-// $('.team-section .description-holder').each(function() {
-// 	$(this).on('click', function() {
-// 		$(this).toggleClass('active');
-// 	});
-// });
+$('#send-mail').submit(function() {
+	alert();
+});

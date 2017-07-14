@@ -1,18 +1,18 @@
-.main-modal.open
-	.top-line
-		.main-container.logos
-			.inline-holder
-				.left-part.inline-el
-					.image-holder
-						a(href="index.html")
-							img(src="img/icons/global-images-logo.png", alt="")
-				.right-part.inline-el
-					.image-holder
-						a(href="index.html")
-							img(src="img/icons/gettyimg.png", alt="")
+.main-modal
 	.form-holder
-
-		form(action="")
+		a(href="#").close-btn
+		.top-line
+			.main-container.logos
+				.inline-holder
+					.left-part.inline-el
+						.image-holder
+							a(href="index.html")
+								img(src="img/icons/global-images-logo.png", alt="")
+					.right-part.inline-el
+						.image-holder
+							a(href="index.html")
+								img(src="img/icons/gettyimg.png", alt="")
+		form(action="")#send-mail
 			.inline-holder
 				//- .contacts.inline-el.mobile
 				//- 	h3 Связаться с нами
@@ -49,7 +49,7 @@
 						.comment
 							label(for="") Текст
 							textarea#textarea
-						button Отправить
+						button.close-modal Отправить
 
 				.contacts.inline-el
 					h3 Contuct Us
