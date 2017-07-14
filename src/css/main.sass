@@ -708,6 +708,9 @@ section.photo-collections
 					line-height: 31px
 					@media (max-width: $tablet)
 						bottom: 50px
+					&.button-left
+						right: auto
+						left: 32px
 	&.services
 		margin-top: 28px
 		margin-bottom: 70px
@@ -1594,3 +1597,108 @@ section.subscriptions
 // 	100%
 // 		transform: scale(0.6)
 // 		opacity: 0.8
+
+
+
+.main-modal
+	&.black
+		&:before
+			background: #000
+			opacity: 0.5
+.prices-container
+	background: #fff
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translateY(-50%) translateX(-50%)
+	z-index: 2
+	width: 100%
+	max-width: 600px
+	.prices-close
+		height: 20px
+		width: 20px
+		background: red
+		display: inline-block
+		position: absolute
+		top: -26px
+		right: 0
+		z-index: 2
+		background: url(../img/icons/ic_close_48px.svg) 50% 50%
+		background-size: 29px
+
+.prices-modal
+	table
+		width: 100%
+		display: none
+		&.active
+			display: table
+	td,th
+		padding: 15px 10px
+		font-weight: normal
+		text-align: center
+	th
+		border-left: 1px solid #000
+		border-right: 1px solid #000
+		font-size: 1.5rem
+	td
+		border: 1px solid #000
+	.modal-head
+		background: #584f4f
+		color: #fff
+		padding: 5px
+		position: relative
+		padding-left: 220px
+	.scroll-holder
+		overflow: auto
+		&::-webkit-scrollbar-track
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1)
+			background-color: #F5F5F5
+			height: 5px
+
+		&::-webkit-scrollbar
+			width: 5px
+			background-color: #F5F5F5
+			height: 5px
+
+		&::-webkit-scrollbar-thumb
+			background-color: #FFF
+			background: #777777
+			height: 5px
+	.modal-title
+		position: absolute
+		top: 10px
+		left: 10px
+		font-size: 1.3rem
+	.tabs
+		padding-left: 0
+		min-width: 375px
+		li
+			a
+				color: #fff
+				font-size: 1.5rem
+				padding: 5px
+				background: #6d6a6a
+				color: #fff
+				margin-left: 5px
+				min-width: 150px
+				min-width: 120px
+				text-align: center
+				display: inline-block
+				&:hover,
+				&.active
+					background: #fff
+					color: #000
+	.button
+		height: 28px
+		color: white
+		font-family: CenturyGothic
+		font-size: 16px
+		font-weight: 400
+		background: #37b34a
+		border: none
+		outline: none
+		opacity: 1
+		transition: opacity, .2s
+		display: inline-block
+		padding: 0 14px
+		line-height: 28px

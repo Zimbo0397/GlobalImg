@@ -33,6 +33,7 @@ html(lang='en')
 								.description-holder
 									p= desc
 									a(href="#").button View collection
+									a(href="#").button.button-left.js-open-prices Prices
 									
 					+collectionsitem(
 						'Креативные материалы Getty Images созданы на основе анализа мировых тенденций на рынке визуальных коммуникаций. Ана- литическая база - миллионы поисковых запросов, анализ ус- пешных рекламных  кампаний, интервью с мировыми экспер- тами в области креатива и др. экспертами. Креатив, соответст- вующий современным тенденциям развития визуального языка.',
@@ -91,6 +92,61 @@ html(lang='en')
 
 
 		include ./partials/footer.jade
+
+		.main-modal.black
+			.prices-container
+				a(href="#").prices-close
+				.prices-modal.modal-parent
+					.modal-head
+						span.modal-title Тарифы и цены
+						.scroll-holder
+							ul.tabs.inline-holder
+								li.inline-el
+									a(href="#photo").active ФОТО
+								li.inline-el
+									a(href="#video") ВИДЕО
+								li.inline-el
+									a(href="#music") МУЗЫКА
+					.scroll-holder
+						.prices-content
+							table#photo.active
+								tbody
+									tr
+										th Новостные
+										th Креативные
+										th Архивное
+										th VR
+									tr
+										td
+											a(href="/photo.html#news").button Детальнее
+										td
+											a(href="/photo.html#creative").button Детальнее
+										td
+											a(href="/photo.html#archive").button Детальнее
+										td
+											a(href="/photo.html#vr").button Детальнее
+							table#video
+								tbody
+									tr
+										th Для компании
+										th Для новостей
+									tr
+										td
+											a(href="/video.html#for-company").button Детальнее
+										td
+											a(href="/video.html#for-news").button Детальнее
+							table#music
+
+								tbody
+									tr
+										th Новостные
+										th Креативные
+									tr
+										td
+											a(href="/music.html#news").button Детальнее
+										td
+											a(href="/music.html#creative").button Детальнее
+
 		include ./partials/contact-form.jade
 
 

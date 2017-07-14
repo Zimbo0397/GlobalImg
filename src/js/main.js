@@ -353,3 +353,48 @@ $(window).on('load', function() {
 $('#send-mail').submit(function() {
 	alert();
 });
+
+
+$('.prices-modal .tabs a').each(function() {
+	$(this).on('click', function(e) {
+		e.preventDefault();
+		var href = $(this).attr('href');
+		$('.prices-modal .tabs a').removeClass('active');
+		$(this).addClass('active');
+		$('.prices-content table').removeClass('active');
+		$(href).addClass('active');
+	});
+});
+
+
+$('.js-open-prices').each(function() {
+	$(this).on('click', function(e) {
+		e.preventDefault();
+		$('.modal-parent').closest('.main-modal').addClass('open');
+		$('body').addClass('blackshadow');
+	});
+});
+
+$(window).on('load', function() {
+	var hash = window.location.hash;
+	if (hash) {
+		$('.modal-sibling').closest('.main-modal').addClass('open');
+		$(hash).addClass('active');
+		$('[href]').each(function() {
+			if ($(this).attr('href') === hash) {
+				$(this).addClass('active');
+			}
+		})
+	}
+});
+
+
+$('.prices-close').each(function() {
+	$(this).on('click', function(e) {
+		e.preventDefault();
+
+		$('.main-modal').removeClass('open');
+		$('body').removeClass('blackshadow');
+		history.pushState('', document.title, window.location.pathname);
+	})
+})

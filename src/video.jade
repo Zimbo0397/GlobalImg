@@ -102,6 +102,63 @@ html(lang='en')
 
 
 		include ./partials/footer.jade
+
+		.main-modal.black
+			.prices-container
+				.prices-modal.modal-sibling
+					a(href="#").prices-close
+					.modal-head
+						span.modal-title Новостные видео
+						.scroll-holder
+							ul.tabs.inline-holder
+								li.inline-el
+									a(href="#for-company") Для Компании
+								li.inline-el
+									a(href="#for-news") Для новостей
+					.scroll-holder
+						.prices-content
+							table#for-company
+								tbody
+									tr
+										th Для WEB + SMM
+										th Для PR компании
+										th Для PRINT издания
+									tr
+										td
+											bold От 10$/фото
+										td
+											bold От 1$/фото
+										td
+											bold От 100$/фото
+									tr
+										td
+											a(href="#").button.js-open-order Заказать
+										td
+											a(href="#").button.js-open-order Заказать
+										td
+											a(href="#").button.js-open-order Заказать
+							table#for-news
+								tbody
+									tr
+										th Для WEB + SMM
+										th Для WEB + SMM
+										th Для PR компании
+									tr
+										td
+											bold От 1000$/фото
+										td
+											bold От 1$/фото
+										td
+											bold От 150$/фото
+
+									tr
+										td
+											a(href="#").button.js-open-order Заказать
+										td
+											a(href="#").button.js-open-order Заказать
+										td
+											a(href="#").button.js-open-order Заказать
+
 		include ./partials/contact-form.jade
 
 
