@@ -334,17 +334,17 @@ $(window).on('load', function() {
 $(window).on('load', function() {
 	$('#preloader').fadeOut();
 	$('.rngst_phone_button').on('click', function() {
-		$('.main-modal').toggleClass('open');
+		$('.order-modal').toggleClass('open');
 		$('body').toggleClass('blackshadow');
 	});
 
 	$('.close-btn').on('click', function() {
-		$('.main-modal').removeClass('open');
+		$('.order-modal').removeClass('open');
 		$('body').removeClass('blackshadow');
 	});
 
 	$('#send-mail').on('submit', function() {
-		$('.main-modal').removeClass('open');
+		$('.order-modal').removeClass('open');
 		$('body').removeClass('blackshadow');
 	})
 })
@@ -398,3 +398,11 @@ $('.prices-close').each(function() {
 		history.pushState('', document.title, window.location.pathname);
 	})
 })
+
+
+$('.js-open-order').each(function() {
+	$(this).on('click', function() {
+		$('.modal-sibling').closest('.main-modal').removeClass('open');
+		$('.main-modal').addClass('open');
+	})
+});
